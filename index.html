@@ -76,10 +76,11 @@ const DEFAULT_TEAM = [
   { name: "Rahnfeld, Eva", department: "Labor", personalnummer: "21327" },
   { name: "Rahnfeld, Hans-Georg", department: "Process Water", personalnummer: "60191" },
   { name: "Min, Hao", department: "Process Water", personalnummer: "21482" },
-  { name: "Volodomyr, Saroz", department: "Process Water", personalnummer: "" },
+  { name: "Volodomyr, Saroz", department: "Process Water", personalnummer: "21278" },
   { name: "Ye, Lixu", department: "IE", personalnummer: "99198" },
   { name: "Taube, Vanessa", department: "Labor", personalnummer: "21811" },
   { name: "Daniels, Lea", department: "Labor", personalnummer: "21481" },
+  { name: "Rui, Liu", department: "", personalnummer: "111111", viewOnly: true },
 ];
 
 const CATEGORY_OPTIONS = [
@@ -223,10 +224,14 @@ const TRANSLATIONS = {
     refreshTooltip: "Jetzt aktualisieren",
     dayLabel: "{n} Tag",
     daysLabel: "{n} Tage",
-    adminCheckboxLabel: "Admin-Rechte (darf Aufgaben erstellen & Team verwalten)",
+    adminCheckboxLabel: "Admin-Rechte (Team verwalten, Aufgaben löschen, Excel-Export)",
     adminBadge: "Admin",
     btnMakeAdmin: "Zum Admin machen",
     btnRemoveAdmin: "Admin-Rechte entziehen",
+    viewOnlyCheckboxLabel: "Nur Ansicht (darf keine Aufgaben erstellen)",
+    viewOnlyBadge: "Nur Ansicht",
+    btnMakeViewOnly: "Auf „Nur Ansicht“ setzen",
+    btnRemoveViewOnly: "Aufgaben-Erstellung erlauben",
   },
   en: {
     sharedNote: "These tasks and the team list are visible to everyone with this link (auto-refresh every {sec}s).",
@@ -315,10 +320,14 @@ const TRANSLATIONS = {
     refreshTooltip: "Refresh now",
     dayLabel: "{n} day",
     daysLabel: "{n} days",
-    adminCheckboxLabel: "Admin rights (may create tasks & manage team)",
+    adminCheckboxLabel: "Admin rights (manage team, delete tasks, Excel export)",
     adminBadge: "Admin",
     btnMakeAdmin: "Make admin",
     btnRemoveAdmin: "Remove admin rights",
+    viewOnlyCheckboxLabel: "View only (may not create tasks)",
+    viewOnlyBadge: "View only",
+    btnMakeViewOnly: "Set to \"view only\"",
+    btnRemoveViewOnly: "Allow creating tasks",
   },
   zh: {
     sharedNote: "所有拥有此链接的人都能看到这些任务和团队列表（每 {sec} 秒自动刷新一次）。",
@@ -407,10 +416,14 @@ const TRANSLATIONS = {
     refreshTooltip: "立即刷新",
     dayLabel: "{n} 天",
     daysLabel: "{n} 天",
-    adminCheckboxLabel: "管理员权限（可创建任务并管理团队）",
+    adminCheckboxLabel: "管理员权限（管理团队、删除任务、导出 Excel）",
     adminBadge: "管理员",
     btnMakeAdmin: "设为管理员",
     btnRemoveAdmin: "取消管理员权限",
+    viewOnlyCheckboxLabel: "仅查看（不可创建任务）",
+    viewOnlyBadge: "仅查看",
+    btnMakeViewOnly: "设为仅查看",
+    btnRemoveViewOnly: "允许创建任务",
   },
 };
 
@@ -527,6 +540,7 @@ function AppInner() {
   const [newDept, setNewDept] = useState("");
   const [newPersNr, setNewPersNr] = useState("");
   const [newIsAdmin, setNewIsAdmin] = useState(false);
+  const [newIsViewOnly, setNewIsViewOnly] = useState(false);
   const [form, setForm] = useState({ title: "", description: "", deadline: "", assignee: "", category: "" });
   const [formError, setFormError] = useState("");
   const [filter, setFilter] = useState("offen");
@@ -553,14 +567,26 @@ function AppInner() {
     if (currentTeam.length === 0) {
       const seeded = await mutateState((s) => ({ ...s, team: DEFAULT_TEAM }));
       currentTeam = seeded ? seeded.team : DEFAULT_TEAM;
-    } else if (!currentTeam.some((m) => m.admin)) {
-      // Migration: ältere gespeicherte Team-Listen kennen das Admin-Feld noch nicht.
-      // Einmalig Christoph Kohn (falls vorhanden) als Admin markieren, damit die Team-/Aufgabenverwaltung erreichbar bleibt.
-      const fixed = await mutateState((s) => ({
-        ...s,
-        team: s.team.map((m) => (m.name === "Kohn, Christoph" ? { ...m, admin: true } : m)),
-      }));
-      if (fixed) currentTeam = fixed.team;
+    } else {
+      const noAdminYet = !currentTeam.some((m) => m.admin);
+      const saroz = currentTeam.find((m) => m.name === "Volodomyr, Saroz");
+      const sarozNeedsPn = saroz && !saroz.personalnummer;
+      const ruiMissing = !currentTeam.some((m) => m.name === "Rui, Liu");
+      if (noAdminYet || sarozNeedsPn || ruiMissing) {
+        const fixed = await mutateState((s) => {
+          let nextTeam = s.team.map((m) => {
+            let updated = m;
+            if (noAdminYet && m.name === "Kohn, Christoph") updated = { ...updated, admin: true };
+            if (sarozNeedsPn && m.name === "Volodomyr, Saroz" && !updated.personalnummer) updated = { ...updated, personalnummer: "21278" };
+            return updated;
+          });
+          if (ruiMissing && !nextTeam.some((m) => m.name === "Rui, Liu")) {
+            nextTeam = [...nextTeam, { name: "Rui, Liu", department: "", personalnummer: "111111", viewOnly: true }];
+          }
+          return { ...s, team: nextTeam };
+        });
+        if (fixed) currentTeam = fixed.team;
+      }
     }
     setTasks(state.tasks);
     setTeam(currentTeam);
@@ -593,6 +619,8 @@ function AppInner() {
   }
 
   const isAdmin = !!(team.find((m) => m.name === me) || {}).admin;
+  const isViewOnly = !!(team.find((m) => m.name === me) || {}).viewOnly;
+  const canCreateTasks = !isViewOnly;
 
   useEffect(() => {
     if (role === "manager" && !isAdmin) setRole("dashboard");
@@ -672,14 +700,21 @@ function AppInner() {
     if (team.some((tm) => tm.personalnummer === personalnummer)) return;
     const result = await mutateState((s) => {
       if (s.team.some((tm) => tm.name === name) || s.team.some((tm) => tm.personalnummer === personalnummer)) return s;
-      return { ...s, team: [...s.team, { name, department, personalnummer, admin: newIsAdmin }] };
+      return { ...s, team: [...s.team, { name, department, personalnummer, admin: newIsAdmin, viewOnly: newIsViewOnly }] };
     });
-    if (result) { setTeam(result.team); setTasks(result.tasks); setNewName(""); setNewDept(""); setNewPersNr(""); setNewIsAdmin(false); }
+    if (result) { setTeam(result.team); setTasks(result.tasks); setNewName(""); setNewDept(""); setNewPersNr(""); setNewIsAdmin(false); setNewIsViewOnly(false); }
   }
 
   async function toggleAdmin(name) {
     const result = await mutateState((s) => ({
       ...s, team: s.team.map((tm) => (tm.name === name ? { ...tm, admin: !tm.admin } : tm)),
+    }));
+    if (result) { setTeam(result.team); setTasks(result.tasks); }
+  }
+
+  async function toggleViewOnly(name) {
+    const result = await mutateState((s) => ({
+      ...s, team: s.team.map((tm) => (tm.name === name ? { ...tm, viewOnly: !tm.viewOnly } : tm)),
     }));
     if (result) { setTeam(result.team); setTasks(result.tasks); }
   }
@@ -1022,7 +1057,7 @@ function AppInner() {
         ) : role === "auswertung" ? (
           <Auswertung tasks={tasks} team={team} departmentOf={departmentOf} onExport={exportExcel} />
         ) : role === "dashboard" ? (
-          <Dashboard tasks={tasks} team={team} departmentOf={departmentOf} isAdmin={isAdmin} onNewTask={() => { setFormError(""); setShowForm(true); }} />
+          <Dashboard tasks={tasks} team={team} departmentOf={departmentOf} isAdmin={isAdmin} canCreateTasks={canCreateTasks} onNewTask={() => { setFormError(""); setShowForm(true); }} />
         ) : (
           <>
             <>
@@ -1121,16 +1156,24 @@ function AppInner() {
               <input type="checkbox" style={{ width: "auto" }} checked={newIsAdmin} onChange={(e) => setNewIsAdmin(e.target.checked)} />
               {t("adminCheckboxLabel")}
             </label>
+            <label style={{ display: "flex", alignItems: "center", gap: 6, marginTop: 6, textTransform: "none", fontWeight: 500, cursor: "pointer" }}>
+              <input type="checkbox" style={{ width: "auto" }} checked={newIsViewOnly} onChange={(e) => setNewIsViewOnly(e.target.checked)} />
+              {t("viewOnlyCheckboxLabel")}
+            </label>
             <div className="team-list">
               {team.map((m) => (
                 <div key={m.name} className="team-row">
                   <div className="info">
                     <span>{m.name}</span><span className="dept">{m.department}</span><span className="dept">{tf("persNrDisplay", { nr: m.personalnummer || "—" })}</span>
                     {m.admin && <span className="pill category">{t("adminBadge")}</span>}
+                    {m.viewOnly && <span className="pill overdue">{t("viewOnlyBadge")}</span>}
                   </div>
-                  <div style={{ display: "flex", gap: 4, alignItems: "center" }}>
+                  <div style={{ display: "flex", gap: 4, alignItems: "center", flexWrap: "wrap" }}>
                     <button className="btn btn-ghost btn-sm" style={{ padding: "4px 8px", fontSize: 11 }} onClick={() => toggleAdmin(m.name)}>
                       {m.admin ? t("btnRemoveAdmin") : t("btnMakeAdmin")}
+                    </button>
+                    <button className="btn btn-ghost btn-sm" style={{ padding: "4px 8px", fontSize: 11 }} onClick={() => toggleViewOnly(m.name)}>
+                      {m.viewOnly ? t("btnRemoveViewOnly") : t("btnMakeViewOnly")}
                     </button>
                     <button onClick={() => removeTeamMember(m.name)}><Icon name="x" /></button>
                   </div>
@@ -1361,7 +1404,7 @@ function ChartLegend({ items }) {
   );
 }
 
-function Dashboard({ tasks, team, departmentOf, onNewTask, isAdmin }) {
+function Dashboard({ tasks, team, departmentOf, onNewTask, isAdmin, canCreateTasks }) {
   const { t, tf, lang } = useLang();
   const { totalGesamt, totalErledigt, totalOffen, totalUeberfaellig, perMA, perDept, perCategory } = computeAggregates(tasks, team, departmentOf);
 
@@ -1397,9 +1440,11 @@ function Dashboard({ tasks, team, departmentOf, onNewTask, isAdmin }) {
   if (totalGesamt === 0) {
     return (
       <div>
-        <div className="toolbar" style={{ justifyContent: "flex-end" }}>
-          <button className="btn btn-primary" onClick={onNewTask}><Icon name="plus" /> {t("btnNewTask")}</button>
-        </div>
+        {canCreateTasks && (
+          <div className="toolbar" style={{ justifyContent: "flex-end" }}>
+            <button className="btn btn-primary" onClick={onNewTask}><Icon name="plus" /> {t("btnNewTask")}</button>
+          </div>
+        )}
         <div className="empty">{t("dashboardEmpty")}</div>
       </div>
     );
@@ -1407,9 +1452,11 @@ function Dashboard({ tasks, team, departmentOf, onNewTask, isAdmin }) {
 
   return (
     <div style={{ minHeight: "calc(100vh - 230px)" }}>
-      <div className="toolbar" style={{ justifyContent: "flex-end" }}>
-        <button className="btn btn-primary" onClick={onNewTask}><Icon name="plus" /> {t("btnNewTask")}</button>
-      </div>
+      {canCreateTasks && (
+        <div className="toolbar" style={{ justifyContent: "flex-end" }}>
+          <button className="btn btn-primary" onClick={onNewTask}><Icon name="plus" /> {t("btnNewTask")}</button>
+        </div>
+      )}
 
       <div className="dashboard-row" style={{ marginBottom: 12 }}>
         <div className="chart-card">
