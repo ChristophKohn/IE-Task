@@ -147,6 +147,9 @@ const TRANSLATIONS = {
     tabMyTasks: "Meine Aufgaben",
     filterOpen: "OFFEN",
     filterAll: "ALLE",
+    filterErledigt: "ERLEDIGT",
+    filterUeberfaellig: "ÜBERFÄLLIG",
+    filterAssigneeAll: "Alle Mitarbeiter",
     btnTeam: "Team",
     btnShiftDistribution: "Verteilung ändern",
     btnExcelExport: "Excel-Export",
@@ -243,6 +246,9 @@ const TRANSLATIONS = {
     tabMyTasks: "My Tasks",
     filterOpen: "OPEN",
     filterAll: "ALL",
+    filterErledigt: "DONE",
+    filterUeberfaellig: "OVERDUE",
+    filterAssigneeAll: "All employees",
     btnTeam: "Team",
     btnShiftDistribution: "Shuffle Distribution",
     btnExcelExport: "Excel Export",
@@ -339,6 +345,9 @@ const TRANSLATIONS = {
     tabMyTasks: "我的任务",
     filterOpen: "未完成",
     filterAll: "全部",
+    filterErledigt: "已完成",
+    filterUeberfaellig: "已逾期",
+    filterAssigneeAll: "所有员工",
     btnTeam: "团队",
     btnShiftDistribution: "调整分布",
     btnExcelExport: "导出 Excel",
@@ -544,6 +553,7 @@ function AppInner() {
   const [form, setForm] = useState({ title: "", description: "", deadline: "", assignee: "", category: "" });
   const [formError, setFormError] = useState("");
   const [filter, setFilter] = useState("offen");
+  const [assigneeFilter, setAssigneeFilter] = useState("");
   const [copiedId, setCopiedId] = useState(null);
   const pollRef = useRef(null);
 
@@ -802,7 +812,13 @@ function AppInner() {
     XLSX.writeFile(wb, "Aufgaben-Export-" + today + ".xlsx");
   }
 
-  const managerTasks = filter === "alle" ? tasks : tasks.filter((tk) => tk.status !== "erledigt");
+  const managerTasks = tasks.filter((tk) => {
+    if (filter === "offen" && tk.status === "erledigt") return false;
+    if (filter === "erledigt" && tk.status !== "erledigt") return false;
+    if (filter === "ueberfaellig" && !isOverdue(tk.deadline, tk.status)) return false;
+    if (assigneeFilter && tk.assignee !== assigneeFilter) return false;
+    return true;
+  });
   const myTasks = tasks.filter((tk) => tk.assignee === me);
   const myOpen = myTasks.filter((tk) => tk.status !== "erledigt");
   const myDone = myTasks.filter((tk) => tk.status === "erledigt");
@@ -1017,7 +1033,17 @@ function AppInner() {
               <div className="seg">
                 <button className={filter === "offen" ? "active" : ""} onClick={() => setFilter("offen")}>{t("filterOpen")}</button>
                 <button className={filter === "alle" ? "active" : ""} onClick={() => setFilter("alle")}>{t("filterAll")}</button>
+                <button className={filter === "erledigt" ? "active" : ""} onClick={() => setFilter("erledigt")}>{t("filterErledigt")}</button>
+                <button className={filter === "ueberfaellig" ? "active" : ""} onClick={() => setFilter("ueberfaellig")}>{t("filterUeberfaellig")}</button>
               </div>
+              <select
+                value={assigneeFilter}
+                onChange={(e) => setAssigneeFilter(e.target.value)}
+                style={{ width: "auto", minWidth: 170 }}
+              >
+                <option value="">{t("filterAssigneeAll")}</option>
+                {team.map((m) => (<option key={m.name} value={m.name}>{m.name}</option>))}
+              </select>
               <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
                 <button className="btn btn-ghost" onClick={() => setShowTeamEdit(true)}><Icon name="users" /> {t("btnTeam")}</button>
                 <button className="btn btn-ghost" onClick={shiftCategoryDistribution} disabled={saving}><Icon name="refresh" /> {t("btnShiftDistribution")}</button>
