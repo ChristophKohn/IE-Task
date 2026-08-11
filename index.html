@@ -235,6 +235,9 @@ const TRANSLATIONS = {
     viewOnlyBadge: "Nur Ansicht",
     btnMakeViewOnly: "Auf „Nur Ansicht“ setzen",
     btnRemoveViewOnly: "Aufgaben-Erstellung erlauben",
+    lblSubitemsField: "Unterpunkte",
+    subitemPlaceholder: "Unterpunkt eingeben",
+    btnAddSubitem: "Unterpunkt hinzufügen",
   },
   en: {
     sharedNote: "These tasks and the team list are visible to everyone with this link (auto-refresh every {sec}s).",
@@ -334,6 +337,9 @@ const TRANSLATIONS = {
     viewOnlyBadge: "View only",
     btnMakeViewOnly: "Set to \"view only\"",
     btnRemoveViewOnly: "Allow creating tasks",
+    lblSubitemsField: "Subtasks",
+    subitemPlaceholder: "Enter subtask",
+    btnAddSubitem: "Add subtask",
   },
   zh: {
     sharedNote: "所有拥有此链接的人都能看到这些任务和团队列表（每 {sec} 秒自动刷新一次）。",
@@ -433,6 +439,9 @@ const TRANSLATIONS = {
     viewOnlyBadge: "仅查看",
     btnMakeViewOnly: "设为仅查看",
     btnRemoveViewOnly: "允许创建任务",
+    lblSubitemsField: "子任务",
+    subitemPlaceholder: "输入子任务",
+    btnAddSubitem: "添加子任务",
   },
 };
 
@@ -523,6 +532,23 @@ function Stamp() {
   );
 }
 
+function SubitemChecklist({ task, onToggle }) {
+  if (!task.subitems || task.subitems.length === 0) return null;
+  const doneCount = task.subitems.filter((si) => si.done).length;
+  return (
+    <div className="subitems">
+      <div className="subitems-progress">{doneCount}/{task.subitems.length}</div>
+      {task.subitems.map((si) => (
+        <label key={si.id} className="subitem-row">
+          <input type="checkbox" checked={!!si.done} onChange={() => onToggle(task.id, si.id)} />
+          <span className={si.done ? "subitem-done" : ""}>{si.text}</span>
+        </label>
+      ))}
+    </div>
+  );
+}
+
+
 function statusClass(t) {
   if (t.status === "erledigt") return "done";
   if (isOverdue(t.deadline, t.status)) return "overdue";
@@ -551,6 +577,7 @@ function AppInner() {
   const [newIsAdmin, setNewIsAdmin] = useState(false);
   const [newIsViewOnly, setNewIsViewOnly] = useState(false);
   const [form, setForm] = useState({ title: "", description: "", deadline: "", assignee: "", category: "" });
+  const [formSubitems, setFormSubitems] = useState([""]);
   const [formError, setFormError] = useState("");
   const [filter, setFilter] = useState("offen");
   const [assigneeFilter, setAssigneeFilter] = useState("");
@@ -643,21 +670,34 @@ function AppInner() {
     if (!form.category) { setFormError(t("errCategoryRequired")); return; }
     setFormError("");
     setSaving(true);
+    const subitems = formSubitems.map((s) => s.trim()).filter(Boolean).map((textVal) => ({ id: uid(), text: textVal, done: false }));
     const task = {
       id: uid(), title: form.title.trim(), description: form.description.trim(),
       deadline: form.deadline, assignee: form.assignee, category: form.category,
       status: "offen", createdAt: new Date().toISOString(), completedAt: null,
+      subitems,
     };
     const result = await mutateState((s) => ({ ...s, tasks: [task, ...s.tasks] }));
     if (result) {
       setTasks(result.tasks); setTeam(result.team);
       setForm({ title: "", description: "", deadline: "", assignee: form.assignee, category: form.category });
+      setFormSubitems([""]);
       setShowForm(false);
       setTimeout(() => copyLink(task.id), 200);
     } else {
       setFormError(t("errSaveFailed"));
     }
     setSaving(false);
+  }
+
+  function updateSubitemField(idx, value) {
+    setFormSubitems((prev) => prev.map((v, i) => (i === idx ? value : v)));
+  }
+  function addSubitemField() {
+    setFormSubitems((prev) => [...prev, ""]);
+  }
+  function removeSubitemField(idx) {
+    setFormSubitems((prev) => prev.filter((_, i) => i !== idx));
   }
 
   async function shiftCategoryDistribution() {
@@ -687,6 +727,24 @@ function AppInner() {
   async function markDone(id) {
     const result = await mutateState((s) => ({
       ...s, tasks: s.tasks.map((tk) => (tk.id === id ? { ...tk, status: "erledigt", completedAt: new Date().toISOString() } : tk)),
+    }));
+    if (result) { setTasks(result.tasks); setTeam(result.team); }
+  }
+
+  async function toggleSubitem(taskId, subitemId) {
+    const result = await mutateState((s) => ({
+      ...s,
+      tasks: s.tasks.map((tk) => {
+        if (tk.id !== taskId) return tk;
+        const subitems = (tk.subitems || []).map((si) => (si.id === subitemId ? { ...si, done: !si.done } : si));
+        const allDone = subitems.length > 0 && subitems.every((si) => si.done);
+        return {
+          ...tk,
+          subitems,
+          status: allDone ? "erledigt" : "offen",
+          completedAt: allDone ? new Date().toISOString() : null,
+        };
+      }),
     }));
     if (result) { setTasks(result.tasks); setTeam(result.team); }
   }
@@ -855,6 +913,13 @@ function AppInner() {
       .task-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 20px; margin: 0 0 4px 0; }
       .task-desc { font-size: 14px; color: #46505a; margin: 0 0 10px 0; line-height: 1.45; }
       .meta-row { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 12px; }
+      .subitems { border-top: 1px solid #EDEDE9; margin-top: 4px; padding-top: 10px; margin-bottom: 10px; }
+      .subitems-progress { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #8a929b; margin-bottom: 6px; letter-spacing: 0.3px; }
+      .subitem-row { display: flex; align-items: flex-start; gap: 8px; padding: 4px 0; font-size: 13.5px; cursor: pointer; color: #1E2429; }
+      .subitem-row input[type="checkbox"] { width: auto; margin-top: 2px; cursor: pointer; }
+      .subitem-done { text-decoration: line-through; color: #8a929b; }
+      .subitem-field-row { display: flex; gap: 6px; margin-bottom: 6px; align-items: center; }
+      .subitem-field-row input { margin: 0; }
       .pill { font-family: 'JetBrains Mono', monospace; font-size: 11.5px; padding: 3px 9px; border-radius: 100px; border: 1px solid #DCDCD6; color: #46505a; background: #F7F7F5; display: inline-flex; align-items: center; gap: 4px; }
       .pill.overdue { color: #B23B1F; border-color: #E7B3A3; background: #FCEDE9; }
       .pill.assignee { color: #234A67; border-color: #C4D6E3; background: #EAF2F8; }
@@ -975,8 +1040,11 @@ function AppInner() {
                   <Icon name="calendarClock" /> {tf("deadlineLabel", { date: fmtDate(tk.deadline) })}
                 </span>
               </div>
+              <SubitemChecklist task={tk} onToggle={toggleSubitem} />
               {tk.status !== "erledigt" ? (
-                me === tk.assignee ? (
+                tk.subitems && tk.subitems.length > 0 ? (
+                  (me === tk.assignee || isAdmin) ? null : <p style={{ fontSize: 13, color: "#8a929b" }}>{t("errWrongAssignee")}</p>
+                ) : me === tk.assignee ? (
                   <button className="btn btn-primary" style={{ width: "100%", justifyContent: "center" }} onClick={() => markDone(tk.id)}>
                     <Icon name="check" /> {t("btnConfirmDone")}
                   </button>
@@ -1068,6 +1136,7 @@ function AppInner() {
                       <Icon name="calendarClock" /> {tf("deadlineLabel", { date: fmtDate(tk.deadline) })}
                     </span>
                   </div>
+                  <SubitemChecklist task={tk} onToggle={toggleSubitem} />
                   <div className="row-between">
                     {copiedId === tk.id ? (
                       <span className="link-copied"><Icon name="clipboardCheck" /> {t("linkCopied")}</span>
@@ -1102,10 +1171,13 @@ function AppInner() {
                         <Icon name="calendarClock" /> {tf("deadlineLabel", { date: fmtDate(tk.deadline) })}
                       </span>
                     </div>
-                    <div className="row-between">
-                      <span></span>
-                      <button className="btn btn-primary" onClick={() => markDone(tk.id)}><Icon name="check" /> {t("btnConfirmDone")}</button>
-                    </div>
+                    <SubitemChecklist task={tk} onToggle={toggleSubitem} />
+                    {(!tk.subitems || tk.subitems.length === 0) && (
+                      <div className="row-between">
+                        <span></span>
+                        <button className="btn btn-primary" onClick={() => markDone(tk.id)}><Icon name="check" /> {t("btnConfirmDone")}</button>
+                      </div>
+                    )}
                   </div>
                 ))}
                 {myDone.length > 0 && (
@@ -1131,7 +1203,7 @@ function AppInner() {
           <div className="form-card" onClick={(e) => e.stopPropagation()}>
             <div className="row-between">
               <h2>{t("formNewTaskTitle")}</h2>
-              <button className="btn btn-ghost" onClick={() => setShowForm(false)}><Icon name="x" /></button>
+              <button className="btn btn-ghost" onClick={() => { setShowForm(false); setFormSubitems([""]); }}><Icon name="x" /></button>
             </div>
             <div>
               <label>{t("lblTitleField")}</label>
@@ -1150,11 +1222,24 @@ function AppInner() {
                 <option value="">{t("selectPlaceholder")}</option>
                 {CATEGORY_OPTIONS.map((c) => (<option key={c} value={c}>{c}</option>))}
               </select>
+              <label>{t("lblSubitemsField")}</label>
+              {formSubitems.map((val, idx) => (
+                <div key={idx} className="subitem-field-row">
+                  <input
+                    value={val}
+                    placeholder={t("subitemPlaceholder")}
+                    onChange={(e) => updateSubitemField(idx, e.target.value)}
+                    onKeyDown={(e) => { if (e.key === "Enter") { e.preventDefault(); addSubitemField(); } }}
+                  />
+                  <button type="button" className="btn btn-ghost btn-sm" onClick={() => removeSubitemField(idx)}><Icon name="x" /></button>
+                </div>
+              ))}
+              <button type="button" className="btn btn-ghost btn-sm" onClick={addSubitemField} style={{ marginBottom: 6 }}><Icon name="plus" /> {t("btnAddSubitem")}</button>
               {team.length === 0 && <p style={{ fontSize: 12, color: "#B23B1F", marginTop: 6 }}>{t("noTeamFormMsg")}</p>}
               {formError && <p style={{ fontSize: 12.5, color: "#B23B1F", marginTop: 10, fontWeight: 600 }}>{formError}</p>}
               <p style={{ fontSize: 12, color: "#8a929b", marginTop: 10 }}>{t("copyHintMsg")}</p>
               <div className="form-actions">
-                <button type="button" className="btn btn-ghost" onClick={() => { setShowForm(false); setFormError(""); }}>{t("btnCancel")}</button>
+                <button type="button" className="btn btn-ghost" onClick={() => { setShowForm(false); setFormError(""); setFormSubitems([""]); }}>{t("btnCancel")}</button>
                 <button type="button" className="btn btn-primary" disabled={saving} onClick={addTask}>{saving ? t("btnSaving") : t("btnCreateTask")}</button>
               </div>
             </div>
