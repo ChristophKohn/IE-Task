@@ -97,7 +97,7 @@ function fmtDate(iso) {
 }
 
 function isOverdue(iso, status) {
-  if (!iso || status === "erledigt") return false;
+  if (!iso || status === "erledigt" || status === "pruefung") return false;
   const today = new Date();
   today.setHours(0, 0, 0, 0);
   const d = new Date(iso + "T00:00:00");
@@ -163,6 +163,7 @@ const TRANSLATIONS = {
     lblOpen: "Offen",
     lblDone: "Erledigt",
     lblOverdue: "Überfällig",
+    lblPruefung: "In Prüfung",
     lblOpenInPlan: "Offen (im Plan)",
     lblTotal: "Gesamt",
     lblEmployee: "Mitarbeiter",
@@ -184,8 +185,14 @@ const TRANSLATIONS = {
     btnLogin: "Anmelden",
     btnLogout: "Abmelden",
     noTasksForYou: "Aktuell keine Aufgaben für dich.",
-    btnConfirmDone: "Als erledigt bestätigen",
+    btnConfirmDone: "Zur Prüfung einreichen",
     doneSectionLabel: "ERLEDIGT",
+    pruefungSectionLabel: "IN PRÜFUNG",
+    stampPruefung: "IN PRÜFUNG",
+    submittedOn: "Eingereicht am {date} — wartet auf Bestätigung",
+    btnConfirmByAdmin: "Bestätigen",
+    btnSendBack: "Zurück an Mitarbeiter",
+    filterPruefung: "IN PRÜFUNG",
     deadlineWas: "Frist war: {date}",
     loadingLabel: "Lädt…",
     taskNotFound: "Diese Aufgabe wurde nicht gefunden oder bereits gelöscht.",
@@ -265,6 +272,7 @@ const TRANSLATIONS = {
     lblOpen: "Open",
     lblDone: "Done",
     lblOverdue: "Overdue",
+    lblPruefung: "In review",
     lblOpenInPlan: "Open (on time)",
     lblTotal: "Total",
     lblEmployee: "Employee",
@@ -286,8 +294,14 @@ const TRANSLATIONS = {
     btnLogin: "Sign in",
     btnLogout: "Sign out",
     noTasksForYou: "No tasks for you right now.",
-    btnConfirmDone: "Confirm as done",
+    btnConfirmDone: "Submit for review",
     doneSectionLabel: "DONE",
+    pruefungSectionLabel: "IN REVIEW",
+    stampPruefung: "IN REVIEW",
+    submittedOn: "Submitted on {date} — awaiting confirmation",
+    btnConfirmByAdmin: "Confirm",
+    btnSendBack: "Send back to employee",
+    filterPruefung: "IN REVIEW",
     deadlineWas: "Deadline was: {date}",
     loadingLabel: "Loading…",
     taskNotFound: "This task was not found or has already been deleted.",
@@ -367,6 +381,7 @@ const TRANSLATIONS = {
     lblOpen: "未完成",
     lblDone: "已完成",
     lblOverdue: "已逾期",
+    lblPruefung: "审核中",
     lblOpenInPlan: "未完成（按计划）",
     lblTotal: "总计",
     lblEmployee: "员工",
@@ -388,8 +403,14 @@ const TRANSLATIONS = {
     btnLogin: "登录",
     btnLogout: "退出登录",
     noTasksForYou: "目前没有分配给你的任务。",
-    btnConfirmDone: "确认已完成",
+    btnConfirmDone: "提交审核",
     doneSectionLabel: "已完成",
+    pruefungSectionLabel: "审核中",
+    stampPruefung: "审核中",
+    submittedOn: "已于 {date} 提交 — 等待确认",
+    btnConfirmByAdmin: "确认",
+    btnSendBack: "退回给员工",
+    filterPruefung: "审核中",
     deadlineWas: "原截止日期：{date}",
     loadingLabel: "加载中…",
     taskNotFound: "未找到该任务，或已被删除。",
@@ -532,6 +553,15 @@ function Stamp() {
   );
 }
 
+function PruefungBadge() {
+  const { t } = useLang();
+  return (
+    <div className="stamp" style={{ borderColor: "#C98A1F", color: "#C98A1F", background: "rgba(201, 138, 31, 0.06)" }}>
+      {t("stampPruefung")}
+    </div>
+  );
+}
+
 function SubitemChecklist({ task, onToggle }) {
   if (!task.subitems || task.subitems.length === 0) return null;
   const doneCount = task.subitems.filter((si) => si.done).length;
@@ -551,6 +581,7 @@ function SubitemChecklist({ task, onToggle }) {
 
 function statusClass(t) {
   if (t.status === "erledigt") return "done";
+  if (t.status === "pruefung") return "pruefung";
   if (isOverdue(t.deadline, t.status)) return "overdue";
   return "open";
 }
@@ -726,7 +757,21 @@ function AppInner() {
 
   async function markDone(id) {
     const result = await mutateState((s) => ({
-      ...s, tasks: s.tasks.map((tk) => (tk.id === id ? { ...tk, status: "erledigt", completedAt: new Date().toISOString() } : tk)),
+      ...s, tasks: s.tasks.map((tk) => (tk.id === id ? { ...tk, status: "pruefung", completedAt: new Date().toISOString() } : tk)),
+    }));
+    if (result) { setTasks(result.tasks); setTeam(result.team); }
+  }
+
+  async function confirmTask(id) {
+    const result = await mutateState((s) => ({
+      ...s, tasks: s.tasks.map((tk) => (tk.id === id ? { ...tk, status: "erledigt", confirmedAt: new Date().toISOString() } : tk)),
+    }));
+    if (result) { setTasks(result.tasks); setTeam(result.team); }
+  }
+
+  async function sendBackTask(id) {
+    const result = await mutateState((s) => ({
+      ...s, tasks: s.tasks.map((tk) => (tk.id === id ? { ...tk, status: "offen", completedAt: null, confirmedAt: null, subitems: (tk.subitems || []).map((si) => ({ ...si, done: false })) } : tk)),
     }));
     if (result) { setTasks(result.tasks); setTeam(result.team); }
   }
@@ -738,12 +783,10 @@ function AppInner() {
         if (tk.id !== taskId) return tk;
         const subitems = (tk.subitems || []).map((si) => (si.id === subitemId ? { ...si, done: !si.done } : si));
         const allDone = subitems.length > 0 && subitems.every((si) => si.done);
-        return {
-          ...tk,
-          subitems,
-          status: allDone ? "erledigt" : "offen",
-          completedAt: allDone ? new Date().toISOString() : null,
-        };
+        if (allDone) {
+          return { ...tk, subitems, status: "pruefung", completedAt: new Date().toISOString() };
+        }
+        return { ...tk, subitems, status: "offen", completedAt: null, confirmedAt: null };
       }),
     }));
     if (result) { setTasks(result.tasks); setTeam(result.team); }
@@ -809,61 +852,67 @@ function AppInner() {
   function exportExcel() {
     const wb = XLSX.utils.book_new();
     const pctStr = (n, total) => (total ? Math.round((n / total) * 100) + "%" : "–");
+    const statusLabel = (s) => (s === "erledigt" ? "erledigt" : s === "pruefung" ? "in Pruefung" : "offen");
     const taskRows = tasks.map((tk) => ({
       Titel: tk.title, Beschreibung: tk.description, Mitarbeiter: tk.assignee,
       Abteilung: departmentOf(tk.assignee), Taetigkeitsbereich: tk.category || "",
-      Frist: fmtDate(tk.deadline), Status: tk.status === "erledigt" ? "erledigt" : "offen",
+      Frist: fmtDate(tk.deadline), Status: statusLabel(tk.status),
       Ueberfaellig: isOverdue(tk.deadline, tk.status) ? "Ja" : "Nein",
       ErstelltAm: tk.createdAt ? new Date(tk.createdAt).toLocaleDateString("de-DE") : "",
-      ErledigtAm: tk.completedAt ? new Date(tk.completedAt).toLocaleDateString("de-DE") : "",
+      EingereichtAm: tk.completedAt ? new Date(tk.completedAt).toLocaleDateString("de-DE") : "",
+      BestaetigtAm: tk.confirmedAt ? new Date(tk.confirmedAt).toLocaleDateString("de-DE") : "",
     }));
     const ws1 = XLSX.utils.json_to_sheet(taskRows.length ? taskRows : [{ Hinweis: "Keine Aufgaben vorhanden" }]);
-    ws1["!cols"] = [{ wch: 26 }, { wch: 34 }, { wch: 18 }, { wch: 16 }, { wch: 18 }, { wch: 12 }, { wch: 10 }, { wch: 12 }, { wch: 12 }, { wch: 12 }];
+    ws1["!cols"] = [{ wch: 26 }, { wch: 34 }, { wch: 18 }, { wch: 16 }, { wch: 18 }, { wch: 12 }, { wch: 12 }, { wch: 12 }, { wch: 12 }, { wch: 12 }, { wch: 12 }];
     XLSX.utils.book_append_sheet(wb, ws1, "Aufgaben");
 
     const perMA = {};
-    team.forEach((m) => { perMA[m.name] = { department: m.department, offen: 0, erledigt: 0, ueberfaellig: 0 }; });
+    team.forEach((m) => { perMA[m.name] = { department: m.department, offen: 0, pruefung: 0, erledigt: 0, ueberfaellig: 0 }; });
     tasks.forEach((tk) => {
-      if (!perMA[tk.assignee]) perMA[tk.assignee] = { department: departmentOf(tk.assignee), offen: 0, erledigt: 0, ueberfaellig: 0 };
-      if (tk.status === "erledigt") perMA[tk.assignee].erledigt++; else perMA[tk.assignee].offen++;
+      if (!perMA[tk.assignee]) perMA[tk.assignee] = { department: departmentOf(tk.assignee), offen: 0, pruefung: 0, erledigt: 0, ueberfaellig: 0 };
+      if (tk.status === "erledigt") perMA[tk.assignee].erledigt++;
+      else if (tk.status === "pruefung") perMA[tk.assignee].pruefung++;
+      else perMA[tk.assignee].offen++;
       if (isOverdue(tk.deadline, tk.status)) perMA[tk.assignee].ueberfaellig++;
     });
     const maRows = Object.entries(perMA).map(([name, v]) => {
-      const gesamt = v.offen + v.erledigt;
-      return { Mitarbeiter: name, Abteilung: v.department, Gesamt: gesamt, Offen: v.offen, "Offen %": pctStr(v.offen, gesamt), Erledigt: v.erledigt, "Erledigt %": pctStr(v.erledigt, gesamt), Ueberfaellig: v.ueberfaellig, "Ueberfaellig %": pctStr(v.ueberfaellig, gesamt) };
+      const gesamt = v.offen + v.pruefung + v.erledigt;
+      return { Mitarbeiter: name, Abteilung: v.department, Gesamt: gesamt, Offen: v.offen, "Offen %": pctStr(v.offen, gesamt), "In Pruefung": v.pruefung, "In Pruefung %": pctStr(v.pruefung, gesamt), Erledigt: v.erledigt, "Erledigt %": pctStr(v.erledigt, gesamt), Ueberfaellig: v.ueberfaellig, "Ueberfaellig %": pctStr(v.ueberfaellig, gesamt) };
     });
     const ws2 = XLSX.utils.json_to_sheet(maRows.length ? maRows : [{ Hinweis: "Kein Team hinterlegt" }]);
-    ws2["!cols"] = [{ wch: 18 }, { wch: 16 }, { wch: 8 }, { wch: 8 }, { wch: 10 }, { wch: 10 }, { wch: 10 }, { wch: 12 }, { wch: 12 }];
+    ws2["!cols"] = [{ wch: 18 }, { wch: 16 }, { wch: 8 }, { wch: 8 }, { wch: 10 }, { wch: 10 }, { wch: 12 }, { wch: 10 }, { wch: 10 }, { wch: 12 }, { wch: 12 }];
     XLSX.utils.book_append_sheet(wb, ws2, "Je Mitarbeiter");
 
     const perDept = {};
     Object.values(perMA).forEach((v) => {
       const d = v.department || "—";
-      if (!perDept[d]) perDept[d] = { offen: 0, erledigt: 0, ueberfaellig: 0 };
-      perDept[d].offen += v.offen; perDept[d].erledigt += v.erledigt; perDept[d].ueberfaellig += v.ueberfaellig;
+      if (!perDept[d]) perDept[d] = { offen: 0, pruefung: 0, erledigt: 0, ueberfaellig: 0 };
+      perDept[d].offen += v.offen; perDept[d].pruefung += v.pruefung; perDept[d].erledigt += v.erledigt; perDept[d].ueberfaellig += v.ueberfaellig;
     });
     const deptRows = Object.entries(perDept).map(([dept, v]) => {
-      const gesamt = v.offen + v.erledigt;
-      return { Abteilung: dept, Gesamt: gesamt, Offen: v.offen, "Offen %": pctStr(v.offen, gesamt), Erledigt: v.erledigt, "Erledigt %": pctStr(v.erledigt, gesamt), Ueberfaellig: v.ueberfaellig, "Ueberfaellig %": pctStr(v.ueberfaellig, gesamt) };
+      const gesamt = v.offen + v.pruefung + v.erledigt;
+      return { Abteilung: dept, Gesamt: gesamt, Offen: v.offen, "Offen %": pctStr(v.offen, gesamt), "In Pruefung": v.pruefung, "In Pruefung %": pctStr(v.pruefung, gesamt), Erledigt: v.erledigt, "Erledigt %": pctStr(v.erledigt, gesamt), Ueberfaellig: v.ueberfaellig, "Ueberfaellig %": pctStr(v.ueberfaellig, gesamt) };
     });
     const ws3 = XLSX.utils.json_to_sheet(deptRows.length ? deptRows : [{ Hinweis: "Kein Team hinterlegt" }]);
-    ws3["!cols"] = [{ wch: 20 }, { wch: 8 }, { wch: 8 }, { wch: 10 }, { wch: 10 }, { wch: 10 }, { wch: 12 }, { wch: 12 }];
+    ws3["!cols"] = [{ wch: 20 }, { wch: 8 }, { wch: 8 }, { wch: 10 }, { wch: 10 }, { wch: 12 }, { wch: 10 }, { wch: 10 }, { wch: 12 }, { wch: 12 }];
     XLSX.utils.book_append_sheet(wb, ws3, "Je Abteilung");
 
     const perCategory = {};
-    CATEGORY_OPTIONS.forEach((c) => { perCategory[c] = { offen: 0, erledigt: 0, ueberfaellig: 0 }; });
+    CATEGORY_OPTIONS.forEach((c) => { perCategory[c] = { offen: 0, pruefung: 0, erledigt: 0, ueberfaellig: 0 }; });
     tasks.forEach((tk) => {
       const c = tk.category || "Ohne Zuordnung";
-      if (!perCategory[c]) perCategory[c] = { offen: 0, erledigt: 0, ueberfaellig: 0 };
-      if (tk.status === "erledigt") perCategory[c].erledigt++; else perCategory[c].offen++;
+      if (!perCategory[c]) perCategory[c] = { offen: 0, pruefung: 0, erledigt: 0, ueberfaellig: 0 };
+      if (tk.status === "erledigt") perCategory[c].erledigt++;
+      else if (tk.status === "pruefung") perCategory[c].pruefung++;
+      else perCategory[c].offen++;
       if (isOverdue(tk.deadline, tk.status)) perCategory[c].ueberfaellig++;
     });
-    const catRows = Object.entries(perCategory).filter(([, v]) => v.offen + v.erledigt > 0).map(([cat, v]) => {
-      const gesamt = v.offen + v.erledigt;
-      return { Taetigkeitsbereich: cat, Gesamt: gesamt, Offen: v.offen, "Offen %": pctStr(v.offen, gesamt), Erledigt: v.erledigt, "Erledigt %": pctStr(v.erledigt, gesamt), Ueberfaellig: v.ueberfaellig, "Ueberfaellig %": pctStr(v.ueberfaellig, gesamt) };
+    const catRows = Object.entries(perCategory).filter(([, v]) => v.offen + v.pruefung + v.erledigt > 0).map(([cat, v]) => {
+      const gesamt = v.offen + v.pruefung + v.erledigt;
+      return { Taetigkeitsbereich: cat, Gesamt: gesamt, Offen: v.offen, "Offen %": pctStr(v.offen, gesamt), "In Pruefung": v.pruefung, "In Pruefung %": pctStr(v.pruefung, gesamt), Erledigt: v.erledigt, "Erledigt %": pctStr(v.erledigt, gesamt), Ueberfaellig: v.ueberfaellig, "Ueberfaellig %": pctStr(v.ueberfaellig, gesamt) };
     });
     const ws4 = XLSX.utils.json_to_sheet(catRows.length ? catRows : [{ Hinweis: "Keine Aufgaben vorhanden" }]);
-    ws4["!cols"] = [{ wch: 20 }, { wch: 8 }, { wch: 8 }, { wch: 10 }, { wch: 10 }, { wch: 10 }, { wch: 12 }, { wch: 12 }];
+    ws4["!cols"] = [{ wch: 20 }, { wch: 8 }, { wch: 8 }, { wch: 10 }, { wch: 10 }, { wch: 12 }, { wch: 10 }, { wch: 10 }, { wch: 12 }, { wch: 12 }];
     XLSX.utils.book_append_sheet(wb, ws4, "Je Taetigkeitsbereich");
 
     const today = new Date().toISOString().slice(0, 10);
@@ -871,14 +920,16 @@ function AppInner() {
   }
 
   const managerTasks = tasks.filter((tk) => {
-    if (filter === "offen" && tk.status === "erledigt") return false;
+    if (filter === "offen" && tk.status !== "offen") return false;
     if (filter === "erledigt" && tk.status !== "erledigt") return false;
+    if (filter === "pruefung" && tk.status !== "pruefung") return false;
     if (filter === "ueberfaellig" && !isOverdue(tk.deadline, tk.status)) return false;
     if (assigneeFilter && tk.assignee !== assigneeFilter) return false;
     return true;
   });
   const myTasks = tasks.filter((tk) => tk.assignee === me);
-  const myOpen = myTasks.filter((tk) => tk.status !== "erledigt");
+  const myOpen = myTasks.filter((tk) => tk.status === "offen");
+  const myPruefung = myTasks.filter((tk) => tk.status === "pruefung");
   const myDone = myTasks.filter((tk) => tk.status === "erledigt");
 
   const globalStyles = (
@@ -909,6 +960,7 @@ function AppInner() {
       .card.open { border-left-color: #3B5169; }
       .card.overdue { border-left-color: #B23B1F; }
       .card.done { border-left-color: #2E7D53; background: #FAFCFA; }
+      .card.pruefung { border-left-color: #C98A1F; background: #FEFAF2; }
       .row-between { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
       .task-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 20px; margin: 0 0 4px 0; }
       .task-desc { font-size: 14px; color: #46505a; margin: 0 0 10px 0; line-height: 1.45; }
@@ -1030,6 +1082,7 @@ function AppInner() {
           ) : (
             <div className={"card " + statusClass(tk)} style={{ marginBottom: 0 }}>
               {tk.status === "erledigt" && <Stamp />}
+              {tk.status === "pruefung" && <PruefungBadge />}
               <div className="eyebrow" style={{ marginBottom: 8 }}>{t("yourTaskLabel")}</div>
               <p className="task-title" style={{ fontSize: 26 }}>{tk.title}</p>
               {tk.description && <p className="task-desc">{tk.description}</p>}
@@ -1041,20 +1094,30 @@ function AppInner() {
                 </span>
               </div>
               <SubitemChecklist task={tk} onToggle={toggleSubitem} />
-              {tk.status !== "erledigt" ? (
-                tk.subitems && tk.subitems.length > 0 ? (
-                  (me === tk.assignee || isAdmin) ? null : <p style={{ fontSize: 13, color: "#8a929b" }}>{t("errWrongAssignee")}</p>
-                ) : me === tk.assignee ? (
-                  <button className="btn btn-primary" style={{ width: "100%", justifyContent: "center" }} onClick={() => markDone(tk.id)}>
-                    <Icon name="check" /> {t("btnConfirmDone")}
-                  </button>
-                ) : (
-                  <p style={{ fontSize: 13, color: "#8a929b" }}>{t("errWrongAssignee")}</p>
-                )
-              ) : (
+              {tk.status === "erledigt" ? (
                 <p style={{ color: "#2E7D53", fontSize: 13.5, fontFamily: "'JetBrains Mono', monospace" }}>
-                  {tf("confirmedOn", { date: tk.completedAt ? new Date(tk.completedAt).toLocaleDateString("de-DE") : "—" })}
+                  {tf("confirmedOn", { date: tk.confirmedAt ? new Date(tk.confirmedAt).toLocaleDateString("de-DE") : "—" })}
                 </p>
+              ) : tk.status === "pruefung" ? (
+                <>
+                  <p style={{ color: "#8a5a1f", fontSize: 13.5, fontFamily: "'JetBrains Mono', monospace" }}>
+                    {tf("submittedOn", { date: tk.completedAt ? new Date(tk.completedAt).toLocaleDateString("de-DE") : "—" })}
+                  </p>
+                  {isAdmin && (
+                    <div className="row-between" style={{ gap: 8, marginTop: 8 }}>
+                      <button className="btn btn-ghost" onClick={() => sendBackTask(tk.id)}>{t("btnSendBack")}</button>
+                      <button className="btn btn-primary" onClick={() => confirmTask(tk.id)}><Icon name="check" /> {t("btnConfirmByAdmin")}</button>
+                    </div>
+                  )}
+                </>
+              ) : tk.subitems && tk.subitems.length > 0 ? (
+                (me === tk.assignee || isAdmin) ? null : <p style={{ fontSize: 13, color: "#8a929b" }}>{t("errWrongAssignee")}</p>
+              ) : me === tk.assignee ? (
+                <button className="btn btn-primary" style={{ width: "100%", justifyContent: "center" }} onClick={() => markDone(tk.id)}>
+                  <Icon name="check" /> {t("btnConfirmDone")}
+                </button>
+              ) : (
+                <p style={{ fontSize: 13, color: "#8a929b" }}>{t("errWrongAssignee")}</p>
               )}
             </div>
           )}
@@ -1101,6 +1164,7 @@ function AppInner() {
               <div className="seg">
                 <button className={filter === "offen" ? "active" : ""} onClick={() => setFilter("offen")}>{t("filterOpen")}</button>
                 <button className={filter === "alle" ? "active" : ""} onClick={() => setFilter("alle")}>{t("filterAll")}</button>
+                <button className={filter === "pruefung" ? "active" : ""} onClick={() => setFilter("pruefung")}>{t("filterPruefung")}</button>
                 <button className={filter === "erledigt" ? "active" : ""} onClick={() => setFilter("erledigt")}>{t("filterErledigt")}</button>
                 <button className={filter === "ueberfaellig" ? "active" : ""} onClick={() => setFilter("ueberfaellig")}>{t("filterUeberfaellig")}</button>
               </div>
@@ -1126,6 +1190,7 @@ function AppInner() {
               managerTasks.map((tk) => (
                 <div key={tk.id} className={"card " + statusClass(tk)}>
                   {tk.status === "erledigt" && <Stamp />}
+                  {tk.status === "pruefung" && <PruefungBadge />}
                   <p className="task-title">{tk.title}</p>
                   {tk.description && <p className="task-desc">{tk.description}</p>}
                   <div className="meta-row">
@@ -1137,6 +1202,19 @@ function AppInner() {
                     </span>
                   </div>
                   <SubitemChecklist task={tk} onToggle={toggleSubitem} />
+                  {tk.status === "pruefung" && (
+                    <div className="row-between" style={{ marginBottom: 10 }}>
+                      <span style={{ fontSize: 12.5, color: "#8a5a1f", fontFamily: "'JetBrains Mono', monospace" }}>
+                        {tf("submittedOn", { date: tk.completedAt ? new Date(tk.completedAt).toLocaleDateString("de-DE") : "—" })}
+                      </span>
+                    </div>
+                  )}
+                  {tk.status === "pruefung" && (
+                    <div className="row-between" style={{ marginBottom: 10, gap: 8 }}>
+                      <button className="btn btn-ghost btn-sm" onClick={() => sendBackTask(tk.id)}>{t("btnSendBack")}</button>
+                      <button className="btn btn-primary btn-sm" onClick={() => confirmTask(tk.id)}><Icon name="check" /> {t("btnConfirmByAdmin")}</button>
+                    </div>
+                  )}
                   <div className="row-between">
                     {copiedId === tk.id ? (
                       <span className="link-copied"><Icon name="clipboardCheck" /> {t("linkCopied")}</span>
@@ -1160,7 +1238,7 @@ function AppInner() {
                   <span className="pill assignee">{me}</span>
                   <button className="btn btn-ghost btn-sm" onClick={logout}>{t("btnLogout")}</button>
                 </div>
-                {myOpen.length === 0 && myDone.length === 0 && <div className="empty">{t("noTasksForYou")}</div>}
+                {myOpen.length === 0 && myPruefung.length === 0 && myDone.length === 0 && <div className="empty">{t("noTasksForYou")}</div>}
                 {myOpen.map((tk) => (
                   <div key={tk.id} className={"card " + statusClass(tk)}>
                     <p className="task-title">{tk.title}</p>
@@ -1180,6 +1258,25 @@ function AppInner() {
                     )}
                   </div>
                 ))}
+                {myPruefung.length > 0 && (
+                  <>
+                    <div className="eyebrow" style={{ margin: "18px 0 8px" }}>{t("pruefungSectionLabel")}</div>
+                    {myPruefung.map((tk) => (
+                      <div key={tk.id} className={"card " + statusClass(tk)}>
+                        <PruefungBadge />
+                        <p className="task-title">{tk.title}</p>
+                        {tk.description && <p className="task-desc">{tk.description}</p>}
+                        <div className="meta-row">
+                          {tk.category && <span className="pill category">{tk.category}</span>}
+                        </div>
+                        <SubitemChecklist task={tk} onToggle={toggleSubitem} />
+                        <p style={{ fontSize: 12.5, color: "#8a5a1f", fontFamily: "'JetBrains Mono', monospace", margin: 0 }}>
+                          {tf("submittedOn", { date: tk.completedAt ? new Date(tk.completedAt).toLocaleDateString("de-DE") : "—" })}
+                        </p>
+                      </div>
+                    ))}
+                  </>
+                )}
                 {myDone.length > 0 && (
                   <>
                     <div className="eyebrow" style={{ margin: "18px 0 8px" }}>{t("doneSectionLabel")}</div>
@@ -1300,42 +1397,48 @@ function AppInner() {
 }
 
 function computeAggregates(tasks, team, departmentOf) {
-  const totalOffen = tasks.filter((t) => t.status !== "erledigt").length;
+  const totalOffen = tasks.filter((t) => t.status === "offen").length;
+  const totalPruefung = tasks.filter((t) => t.status === "pruefung").length;
   const totalErledigt = tasks.filter((t) => t.status === "erledigt").length;
   const totalUeberfaellig = tasks.filter((t) => isOverdue(t.deadline, t.status)).length;
   const totalGesamt = tasks.length;
   const perMA = {};
-  team.forEach((m) => { perMA[m.name] = { department: m.department, offen: 0, erledigt: 0, ueberfaellig: 0 }; });
+  team.forEach((m) => { perMA[m.name] = { department: m.department, offen: 0, pruefung: 0, erledigt: 0, ueberfaellig: 0 }; });
   tasks.forEach((t) => {
-    if (!perMA[t.assignee]) perMA[t.assignee] = { department: departmentOf(t.assignee), offen: 0, erledigt: 0, ueberfaellig: 0 };
-    if (t.status === "erledigt") perMA[t.assignee].erledigt++; else perMA[t.assignee].offen++;
+    if (!perMA[t.assignee]) perMA[t.assignee] = { department: departmentOf(t.assignee), offen: 0, pruefung: 0, erledigt: 0, ueberfaellig: 0 };
+    if (t.status === "erledigt") perMA[t.assignee].erledigt++;
+    else if (t.status === "pruefung") perMA[t.assignee].pruefung++;
+    else perMA[t.assignee].offen++;
     if (isOverdue(t.deadline, t.status)) perMA[t.assignee].ueberfaellig++;
   });
   const perDept = {};
   Object.values(perMA).forEach((v) => {
     const d = v.department || "—";
-    if (!perDept[d]) perDept[d] = { offen: 0, erledigt: 0, ueberfaellig: 0 };
-    perDept[d].offen += v.offen; perDept[d].erledigt += v.erledigt; perDept[d].ueberfaellig += v.ueberfaellig;
+    if (!perDept[d]) perDept[d] = { offen: 0, pruefung: 0, erledigt: 0, ueberfaellig: 0 };
+    perDept[d].offen += v.offen; perDept[d].pruefung += v.pruefung; perDept[d].erledigt += v.erledigt; perDept[d].ueberfaellig += v.ueberfaellig;
   });
   const perCategory = {};
   tasks.forEach((t) => {
     const c = t.category || "Ohne Zuordnung";
-    if (!perCategory[c]) perCategory[c] = { offen: 0, erledigt: 0, ueberfaellig: 0 };
-    if (t.status === "erledigt") perCategory[c].erledigt++; else perCategory[c].offen++;
+    if (!perCategory[c]) perCategory[c] = { offen: 0, pruefung: 0, erledigt: 0, ueberfaellig: 0 };
+    if (t.status === "erledigt") perCategory[c].erledigt++;
+    else if (t.status === "pruefung") perCategory[c].pruefung++;
+    else perCategory[c].offen++;
     if (isOverdue(t.deadline, t.status)) perCategory[c].ueberfaellig++;
   });
-  return { totalOffen, totalErledigt, totalUeberfaellig, totalGesamt, perMA, perDept, perCategory };
+  return { totalOffen, totalPruefung, totalErledigt, totalUeberfaellig, totalGesamt, perMA, perDept, perCategory };
 }
 
 function pct(n, total) { if (!total) return "–"; return Math.round((n / total) * 100) + "%"; }
 
 const COL_ERLEDIGT = "#2E7D53";
 const COL_OFFEN = "#3B5169";
+const COL_PRUEFUNG = "#C98A1F";
 const COL_UEBERFAELLIG = "#B23B1F";
 
 function Auswertung({ tasks, team, departmentOf, onExport }) {
   const { t } = useLang();
-  const { totalOffen, totalErledigt, totalUeberfaellig, totalGesamt, perMA, perDept, perCategory } = computeAggregates(tasks, team, departmentOf);
+  const { totalOffen, totalPruefung, totalErledigt, totalUeberfaellig, totalGesamt, perMA, perDept, perCategory } = computeAggregates(tasks, team, departmentOf);
   return (
     <div>
       <div className="toolbar">
@@ -1344,20 +1447,22 @@ function Auswertung({ tasks, team, departmentOf, onExport }) {
       </div>
       <div className="stat-grid">
         <div className="stat-card"><div className="n">{totalOffen}</div><div className="l">{t("lblOpen")} · {pct(totalOffen, totalGesamt)}</div></div>
+        <div className="stat-card"><div className="n" style={{ color: "#C98A1F" }}>{totalPruefung}</div><div className="l">{t("filterPruefung")} · {pct(totalPruefung, totalGesamt)}</div></div>
         <div className="stat-card"><div className="n">{totalErledigt}</div><div className="l">{t("lblDone")} · {pct(totalErledigt, totalGesamt)}</div></div>
         <div className="stat-card"><div className="n" style={{ color: totalUeberfaellig > 0 ? "#B23B1F" : "#1E2429" }}>{totalUeberfaellig}</div><div className="l">{t("lblOverdue")} · {pct(totalUeberfaellig, totalGesamt)}</div></div>
       </div>
       <div className="eval-title" style={{ marginTop: 4 }}>{t("sectionPerEmployee")}</div>
       <table className="eval">
-        <thead><tr><th>{t("lblEmployee")}</th><th>{t("lblDepartment")}</th><th>{t("lblTotal")}</th><th>{t("lblOpen")}</th><th>{t("lblDone")}</th><th>{t("lblOverdue")}</th></tr></thead>
+        <thead><tr><th>{t("lblEmployee")}</th><th>{t("lblDepartment")}</th><th>{t("lblTotal")}</th><th>{t("lblOpen")}</th><th>{t("lblPruefung")}</th><th>{t("lblDone")}</th><th>{t("lblOverdue")}</th></tr></thead>
         <tbody>
-          {Object.entries(perMA).length === 0 && (<tr><td colSpan={6} style={{ color: "#8a929b" }}>{t("noTeamMsg")}</td></tr>)}
+          {Object.entries(perMA).length === 0 && (<tr><td colSpan={7} style={{ color: "#8a929b" }}>{t("noTeamMsg")}</td></tr>)}
           {Object.entries(perMA).map(([name, v]) => {
-            const g = v.offen + v.erledigt;
+            const g = v.offen + v.pruefung + v.erledigt;
             return (
               <tr key={name}>
                 <td>{name}</td><td>{v.department}</td><td className="num">{g}</td>
                 <td className="num">{v.offen} <span style={{ color: "#8a929b" }}>({pct(v.offen, g)})</span></td>
+                <td className="num">{v.pruefung} <span style={{ color: "#8a929b" }}>({pct(v.pruefung, g)})</span></td>
                 <td className="num">{v.erledigt} <span style={{ color: "#8a929b" }}>({pct(v.erledigt, g)})</span></td>
                 <td className={"num " + (v.ueberfaellig > 0 ? "overdue-cell" : "")}>{v.ueberfaellig} <span style={{ color: v.ueberfaellig > 0 ? "#B23B1F" : "#8a929b" }}>({pct(v.ueberfaellig, g)})</span></td>
               </tr>
@@ -1367,15 +1472,16 @@ function Auswertung({ tasks, team, departmentOf, onExport }) {
       </table>
       <div className="eval-title">{t("sectionPerDept")}</div>
       <table className="eval">
-        <thead><tr><th>{t("lblDepartment")}</th><th>{t("lblTotal")}</th><th>{t("lblOpen")}</th><th>{t("lblDone")}</th><th>{t("lblOverdue")}</th></tr></thead>
+        <thead><tr><th>{t("lblDepartment")}</th><th>{t("lblTotal")}</th><th>{t("lblOpen")}</th><th>{t("lblPruefung")}</th><th>{t("lblDone")}</th><th>{t("lblOverdue")}</th></tr></thead>
         <tbody>
-          {Object.entries(perDept).length === 0 && (<tr><td colSpan={5} style={{ color: "#8a929b" }}>{t("noTeamMsg")}</td></tr>)}
+          {Object.entries(perDept).length === 0 && (<tr><td colSpan={6} style={{ color: "#8a929b" }}>{t("noTeamMsg")}</td></tr>)}
           {Object.entries(perDept).map(([dept, v]) => {
-            const g = v.offen + v.erledigt;
+            const g = v.offen + v.pruefung + v.erledigt;
             return (
               <tr key={dept}>
                 <td>{dept}</td><td className="num">{g}</td>
                 <td className="num">{v.offen} <span style={{ color: "#8a929b" }}>({pct(v.offen, g)})</span></td>
+                <td className="num">{v.pruefung} <span style={{ color: "#8a929b" }}>({pct(v.pruefung, g)})</span></td>
                 <td className="num">{v.erledigt} <span style={{ color: "#8a929b" }}>({pct(v.erledigt, g)})</span></td>
                 <td className={"num " + (v.ueberfaellig > 0 ? "overdue-cell" : "")}>{v.ueberfaellig} <span style={{ color: v.ueberfaellig > 0 ? "#B23B1F" : "#8a929b" }}>({pct(v.ueberfaellig, g)})</span></td>
               </tr>
@@ -1385,15 +1491,16 @@ function Auswertung({ tasks, team, departmentOf, onExport }) {
       </table>
       <div className="eval-title">{t("sectionPerCategory")}</div>
       <table className="eval">
-        <thead><tr><th>{t("lblCategory")}</th><th>{t("lblTotal")}</th><th>{t("lblOpen")}</th><th>{t("lblDone")}</th><th>{t("lblOverdue")}</th></tr></thead>
+        <thead><tr><th>{t("lblCategory")}</th><th>{t("lblTotal")}</th><th>{t("lblOpen")}</th><th>{t("lblPruefung")}</th><th>{t("lblDone")}</th><th>{t("lblOverdue")}</th></tr></thead>
         <tbody>
-          {Object.entries(perCategory).length === 0 && (<tr><td colSpan={5} style={{ color: "#8a929b" }}>{t("noTasksMsg")}</td></tr>)}
+          {Object.entries(perCategory).length === 0 && (<tr><td colSpan={6} style={{ color: "#8a929b" }}>{t("noTasksMsg")}</td></tr>)}
           {Object.entries(perCategory).map(([cat, v]) => {
-            const g = v.offen + v.erledigt;
+            const g = v.offen + v.pruefung + v.erledigt;
             return (
               <tr key={cat}>
                 <td>{cat}</td><td className="num">{g}</td>
                 <td className="num">{v.offen} <span style={{ color: "#8a929b" }}>({pct(v.offen, g)})</span></td>
+                <td className="num">{v.pruefung} <span style={{ color: "#8a929b" }}>({pct(v.pruefung, g)})</span></td>
                 <td className="num">{v.erledigt} <span style={{ color: "#8a929b" }}>({pct(v.erledigt, g)})</span></td>
                 <td className={"num " + (v.ueberfaellig > 0 ? "overdue-cell" : "")}>{v.ueberfaellig} <span style={{ color: v.ueberfaellig > 0 ? "#B23B1F" : "#8a929b" }}>({pct(v.ueberfaellig, g)})</span></td>
               </tr>
@@ -1407,7 +1514,7 @@ function Auswertung({ tasks, team, departmentOf, onExport }) {
 
 function toStackData(obj, t) {
   return Object.entries(obj).map(([name, v]) => ({
-    name, [t("lblDone")]: v.erledigt, [t("lblOpenInPlan")]: v.offen - v.ueberfaellig, [t("lblOverdue")]: v.ueberfaellig,
+    name, [t("lblDone")]: v.erledigt, [t("lblPruefung")]: v.pruefung, [t("lblOpenInPlan")]: v.offen - v.ueberfaellig, [t("lblOverdue")]: v.ueberfaellig,
   }));
 }
 
@@ -1444,6 +1551,7 @@ function MiniDonut({ data, total, centerLabel }) {
 function VerticalStackedBars({ data, keyNames }) {
   const keys = [
     { key: keyNames.done, color: COL_ERLEDIGT },
+    { key: keyNames.pruefung, color: COL_PRUEFUNG },
     { key: keyNames.openInPlan, color: COL_OFFEN },
     { key: keyNames.overdue, color: COL_UEBERFAELLIG },
   ];
@@ -1474,6 +1582,7 @@ function VerticalStackedBars({ data, keyNames }) {
 function RankedBars({ data, keyNames }) {
   const keys = [
     { key: keyNames.done, color: COL_ERLEDIGT },
+    { key: keyNames.pruefung, color: COL_PRUEFUNG },
     { key: keyNames.openInPlan, color: COL_OFFEN },
     { key: keyNames.overdue, color: COL_UEBERFAELLIG },
   ];
@@ -1517,20 +1626,22 @@ function ChartLegend({ items }) {
 
 function Dashboard({ tasks, team, departmentOf, onNewTask, isAdmin, canCreateTasks }) {
   const { t, tf, lang } = useLang();
-  const { totalGesamt, totalErledigt, totalOffen, totalUeberfaellig, perMA, perDept, perCategory } = computeAggregates(tasks, team, departmentOf);
+  const { totalGesamt, totalErledigt, totalPruefung, totalOffen, totalUeberfaellig, perMA, perDept, perCategory } = computeAggregates(tasks, team, departmentOf);
 
   const donutData = [
     { name: t("lblDone"), value: totalErledigt, color: COL_ERLEDIGT },
+    { name: t("lblPruefung"), value: totalPruefung, color: COL_PRUEFUNG },
     { name: t("lblOpenInPlan"), value: totalOffen - totalUeberfaellig, color: COL_OFFEN },
     { name: t("lblOverdue"), value: totalUeberfaellig, color: COL_UEBERFAELLIG },
   ].filter((d) => d.value > 0);
 
-  const keyNames = { done: t("lblDone"), openInPlan: t("lblOpenInPlan"), overdue: t("lblOverdue") };
+  const keyNames = { done: t("lblDone"), pruefung: t("lblPruefung"), openInPlan: t("lblOpenInPlan"), overdue: t("lblOverdue") };
   const maChartData = toStackData(perMA, t);
   const deptChartData = toStackData(perDept, t);
   const catChartData = toStackData(perCategory, t);
   const legendItems = [
     { label: t("lblDone"), color: COL_ERLEDIGT },
+    { label: t("lblPruefung"), color: COL_PRUEFUNG },
     { label: t("lblOpenInPlan"), color: COL_OFFEN },
     { label: t("lblOverdue"), color: COL_UEBERFAELLIG },
   ];
