@@ -1,18 +1,6 @@
 {
   "tasks": [
     {
-      "id": "j1wqy55b",
-      "title": "Extrusion Line can be removed by polishing or not",
-      "description": "test the parts with extrusion line , after fast polishing and painting , the extrusion line is gone or not",
-      "deadline": "2026-08-12",
-      "assignee": "Zhao, Dongyuan",
-      "category": "IE Task",
-      "status": "offen",
-      "createdAt": "2026-08-12T11:47:22.564Z",
-      "completedAt": null,
-      "subitems": []
-    },
-    {
       "id": "qrd2l10s",
       "title": "Fire Alarm Anod 1",
       "description": "Sensor is problem. Talk with Siemens about possibilities",
