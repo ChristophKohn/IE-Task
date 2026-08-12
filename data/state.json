@@ -1,6 +1,39 @@
 {
   "tasks": [
     {
+      "id": "qrd2l10s",
+      "title": "Fire Alarm Anod 1",
+      "description": "Sensor is problem. Talk with Siemens about possibilities",
+      "deadline": "2026-08-28",
+      "assignee": "Jula, Nikolaos",
+      "category": "EHS Task",
+      "status": "offen",
+      "createdAt": "2026-08-12T09:34:01.135Z",
+      "completedAt": null,
+      "subitems": [
+        {
+          "id": "4xv1eutd",
+          "text": "Talk with Siemens Posibilities",
+          "done": false
+        },
+        {
+          "id": "w8hx5mze",
+          "text": "Planning",
+          "done": false
+        },
+        {
+          "id": "dj5z3ox6",
+          "text": "Handover to Uwe Bayer after Vacation",
+          "done": false
+        },
+        {
+          "id": "41jk2e1k",
+          "text": "PR from our side",
+          "done": false
+        }
+      ]
+    },
+    {
       "id": "6me3gjg8",
       "title": "Seperate Carton Stripes",
       "description": "Seperate New and old stripes",
