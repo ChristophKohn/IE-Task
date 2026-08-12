@@ -1,6 +1,18 @@
 {
   "tasks": [
     {
+      "id": "tox39lpd",
+      "title": "Update WI for RTF Packaging before Tempering",
+      "description": "Update Working Instruction for Packaging. No carton use. Al only",
+      "deadline": "2026-08-13",
+      "assignee": "Geiger, Karl",
+      "category": "IE Task",
+      "status": "offen",
+      "createdAt": "2026-08-12T08:33:01.314Z",
+      "completedAt": null,
+      "subitems": []
+    },
+    {
       "id": "qvna8xt5",
       "title": "IBC M2 Removing",
       "description": "Dirty IBC in M2 empty and renew",
