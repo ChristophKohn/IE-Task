@@ -14,14 +14,15 @@
         {
           "id": "epwegqus",
           "text": "PR New Cross bars",
-          "done": false
+          "done": true
         },
         {
           "id": "ynwccx2k",
           "text": "Delivery Time",
           "done": false
         }
-      ]
+      ],
+      "confirmedAt": null
     },
     {
       "id": "dv4v7o71",
