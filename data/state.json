@@ -1,6 +1,18 @@
 {
   "tasks": [
     {
+      "id": "3gk26xlh",
+      "title": "How to remove the extrusion line",
+      "description": "test whether fast polishing process can remove the extrusion line (10-20-30-40-60)",
+      "deadline": "2026-08-13",
+      "assignee": "Zhao, Dongyuan",
+      "category": "IE Task",
+      "status": "offen",
+      "createdAt": "2026-08-12T12:11:01.634Z",
+      "completedAt": null,
+      "subitems": []
+    },
+    {
       "id": "qrd2l10s",
       "title": "Fire Alarm Anod 1",
       "description": "Sensor is problem. Talk with Siemens about possibilities",
