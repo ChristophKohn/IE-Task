@@ -1,6 +1,18 @@
 {
   "tasks": [
     {
+      "id": "dv4v7o71",
+      "title": "New Universal Cross Bars DZL",
+      "description": "Check possible new universal DZL Cross Bars",
+      "deadline": "2026-08-13",
+      "assignee": "Yurtyapan, Ilker",
+      "category": "IE Task",
+      "status": "offen",
+      "createdAt": "2026-08-12T15:29:27.150Z",
+      "completedAt": null,
+      "subitems": []
+    },
+    {
       "id": "3gk26xlh",
       "title": "How to remove the extrusion line",
       "description": "test whether fast polishing process can remove the extrusion line (10-20-30-40-60)",
