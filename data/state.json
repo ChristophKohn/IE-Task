@@ -185,9 +185,9 @@
       "deadline": "2026-08-12",
       "assignee": "Zhao, Dongyuan",
       "category": "IE Task",
-      "status": "offen",
+      "status": "pruefung",
       "createdAt": "2026-08-10T11:18:38.961Z",
-      "completedAt": null,
+      "completedAt": "2026-08-12T11:45:08.971Z",
       "confirmedAt": null,
       "subitems": []
     },
@@ -835,9 +835,9 @@
       "deadline": "2026-08-11",
       "assignee": "Zhao, Dongyuan",
       "category": "IE Task",
-      "status": "pruefung",
+      "status": "offen",
       "createdAt": "2026-08-04T15:40:13.334Z",
-      "completedAt": "2026-08-12T11:45:00.687Z",
+      "completedAt": null,
       "confirmedAt": null,
       "subitems": []
     },
