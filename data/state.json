@@ -769,10 +769,10 @@
       "deadline": "2026-08-07",
       "assignee": "Kohn, Christoph",
       "category": "IE Task",
-      "status": "pruefung",
+      "status": "erledigt",
       "createdAt": "2026-08-05T06:35:37.145Z",
-      "completedAt": "2026-08-12T15:28:20.463Z",
-      "confirmedAt": null,
+      "completedAt": null,
+      "confirmedAt": "2026-08-12T15:28:28.671Z",
       "subitems": []
     },
     {
