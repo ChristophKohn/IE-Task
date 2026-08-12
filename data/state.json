@@ -1,6 +1,29 @@
 {
   "tasks": [
     {
+      "id": "148y69bl",
+      "title": "Ordering New Crossbars",
+      "description": "",
+      "deadline": "2026-09-04",
+      "assignee": "Kohn, Christoph",
+      "category": "Management",
+      "status": "offen",
+      "createdAt": "2026-08-12T15:30:13.091Z",
+      "completedAt": null,
+      "subitems": [
+        {
+          "id": "epwegqus",
+          "text": "PR New Cross bars",
+          "done": false
+        },
+        {
+          "id": "ynwccx2k",
+          "text": "Delivery Time",
+          "done": false
+        }
+      ]
+    },
+    {
       "id": "dv4v7o71",
       "title": "New Universal Cross Bars DZL",
       "description": "Check possible new universal DZL Cross Bars",
