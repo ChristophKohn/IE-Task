@@ -1,6 +1,34 @@
 {
   "tasks": [
     {
+      "id": "qdav5fwt",
+      "title": "New Carton Stripes",
+      "description": "Order new Carton stripes for RTF Packaging",
+      "deadline": "2026-08-14",
+      "assignee": "Geiger, Karl",
+      "category": "IE Task",
+      "status": "offen",
+      "createdAt": "2026-08-12T08:33:54.824Z",
+      "completedAt": null,
+      "subitems": [
+        {
+          "id": "e192sl4a",
+          "text": "Check quantity",
+          "done": false
+        },
+        {
+          "id": "kf7hmiy1",
+          "text": "Check offer with Purchasing",
+          "done": false
+        },
+        {
+          "id": "1dul1r9f",
+          "text": "Order Batch",
+          "done": false
+        }
+      ]
+    },
+    {
       "id": "tox39lpd",
       "title": "Update WI for RTF Packaging before Tempering",
       "description": "Update Working Instruction for Packaging. No carton use. Al only",
