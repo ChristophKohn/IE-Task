@@ -1,6 +1,18 @@
 {
   "tasks": [
     {
+      "id": "qvna8xt5",
+      "title": "IBC M2 Removing",
+      "description": "Dirty IBC in M2 empty and renew",
+      "deadline": "2026-08-13",
+      "assignee": "Rahnfeld, Hans-Georg",
+      "category": "EHS Task",
+      "status": "offen",
+      "createdAt": "2026-08-12T08:31:26.118Z",
+      "completedAt": null,
+      "subitems": []
+    },
+    {
       "id": "puqkhbbb",
       "title": "New Bolts anodizing Frame",
       "description": "New bolts for Anodizing. Delivery? And testing. Not remove Double racks anymore",
