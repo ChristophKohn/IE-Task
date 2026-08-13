@@ -1,6 +1,34 @@
 {
   "tasks": [
     {
+      "id": "645ni8ui",
+      "title": "Tesla ZLSS Stamping Line",
+      "description": "Laser cutting foil automatic",
+      "deadline": "2026-08-27",
+      "assignee": "Geiger, Karl",
+      "category": "Management",
+      "status": "offen",
+      "createdAt": "2026-08-13T12:53:43.705Z",
+      "completedAt": null,
+      "subitems": [
+        {
+          "id": "h3i57h8r",
+          "text": "Check possibility",
+          "done": false
+        },
+        {
+          "id": "hloe0fuh",
+          "text": "Possible Supplier for laser cutting foil",
+          "done": false
+        },
+        {
+          "id": "fgbt1n63",
+          "text": "integration in Line",
+          "done": false
+        }
+      ]
+    },
+    {
       "id": "ssziwear",
       "title": "Packaging DZL Tesla RTF",
       "description": "Parts always falling around. Need to be bended before handover to Elox",
