@@ -1,18 +1,6 @@
 {
   "tasks": [
     {
-      "id": "j6z9bxkv",
-      "title": "New Floor RTF",
-      "description": "Painting for floor in RTF to easy clean",
-      "deadline": "2026-08-20",
-      "assignee": "Kohn, Christoph",
-      "category": "Management",
-      "status": "offen",
-      "createdAt": "2026-08-13T14:34:47.825Z",
-      "completedAt": null,
-      "subitems": []
-    },
-    {
       "id": "645ni8ui",
       "title": "Tesla ZLSS Stamping Line",
       "description": "Laser cutting foil automatic",
@@ -106,10 +94,11 @@
       "deadline": "2026-08-13",
       "assignee": "Zhao, Dongyuan",
       "category": "IE Task",
-      "status": "pruefung",
+      "status": "erledigt",
       "createdAt": "2026-08-12T12:11:01.634Z",
       "completedAt": "2026-08-13T13:26:43.809Z",
-      "subitems": []
+      "subitems": [],
+      "confirmedAt": "2026-08-13T14:35:07.791Z"
     },
     {
       "id": "qrd2l10s",
