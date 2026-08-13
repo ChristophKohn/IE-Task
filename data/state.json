@@ -1,6 +1,29 @@
 {
   "tasks": [
     {
+      "id": "ssziwear",
+      "title": "Packaging DZL Tesla RTF",
+      "description": "Parts always falling around. Need to be bended before handover to Elox",
+      "deadline": "2026-08-14",
+      "assignee": "Geiger, Karl",
+      "category": "IE Task",
+      "status": "offen",
+      "createdAt": "2026-08-13T06:10:50.966Z",
+      "completedAt": null,
+      "subitems": [
+        {
+          "id": "eyvcgrmp",
+          "text": "Working Instruction Update",
+          "done": false
+        },
+        {
+          "id": "47my0dfy",
+          "text": "Training Supervisor",
+          "done": false
+        }
+      ]
+    },
+    {
       "id": "148y69bl",
       "title": "Ordering New Crossbars",
       "description": "",
