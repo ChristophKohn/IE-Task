@@ -1,6 +1,18 @@
 {
   "tasks": [
     {
+      "id": "hi8p92z1",
+      "title": "E80 Laser Machine Testing",
+      "description": "Testing of the new project equipment and tooling programs, as well as product testing.",
+      "deadline": "2026-08-19",
+      "assignee": "Song, Wanxin",
+      "category": "IE Task",
+      "status": "offen",
+      "createdAt": "2026-08-14T09:29:48.871Z",
+      "completedAt": null,
+      "subitems": []
+    },
+    {
       "id": "645ni8ui",
       "title": "Tesla ZLSS Stamping Line",
       "description": "Laser cutting foil automatic",
