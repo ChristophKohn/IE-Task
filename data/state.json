@@ -1,6 +1,18 @@
 {
   "tasks": [
     {
+      "id": "mqac900q",
+      "title": "E80 ZLS Assembly Layout Planning",
+      "description": "E80 and T-MY ZLS share one assembly machine. The layout needs to be replanned to reduce unnecessary material handling and improve efficiency.",
+      "deadline": "2026-08-21",
+      "assignee": "Song, Wanxin",
+      "category": "IE Task",
+      "status": "offen",
+      "createdAt": "2026-08-14T09:31:41.583Z",
+      "completedAt": null,
+      "subitems": []
+    },
+    {
       "id": "hi8p92z1",
       "title": "E80 Laser Machine Testing",
       "description": "Testing of the new project equipment and tooling programs, as well as product testing.",
