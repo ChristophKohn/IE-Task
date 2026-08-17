@@ -371,10 +371,10 @@
       "deadline": "2026-08-19",
       "assignee": "Song, Wanxin",
       "category": "Developing",
-      "status": "pruefung",
+      "status": "erledigt",
       "createdAt": "2026-08-10T10:59:12.744Z",
       "completedAt": "2026-08-14T09:25:55.633Z",
-      "confirmedAt": null,
+      "confirmedAt": "2026-08-17T07:21:46.090Z",
       "subitems": []
     },
     {
@@ -436,10 +436,10 @@
       "deadline": "2026-08-14",
       "assignee": "Jula, Nikolaos",
       "category": "Developing",
-      "status": "erledigt",
+      "status": "pruefung",
       "createdAt": "2026-08-10T08:20:47.167Z",
       "completedAt": "2026-08-14T06:42:27.933Z",
-      "confirmedAt": "2026-08-17T07:21:33.663Z",
+      "confirmedAt": null,
       "subitems": []
     },
     {
