@@ -1,6 +1,34 @@
 {
   "tasks": [
     {
+      "id": "cajh3yum",
+      "title": "Install new Crossbars",
+      "description": "New crossbars for universal DZL Painting frames installation",
+      "deadline": "2026-09-18",
+      "assignee": "Yurtyapan, Ilker",
+      "category": "IE Task",
+      "status": "offen",
+      "createdAt": "2026-08-17T07:24:18.938Z",
+      "completedAt": null,
+      "subitems": [
+        {
+          "id": "youd6kzn",
+          "text": "Delivery 2 weeks",
+          "done": false
+        },
+        {
+          "id": "pg2ig2qt",
+          "text": "First frame producing with Niko",
+          "done": false
+        },
+        {
+          "id": "226air58",
+          "text": "Clear timeline to finish all",
+          "done": false
+        }
+      ]
+    },
+    {
       "id": "478qldoy",
       "title": "Tooling Inventory Mercedes",
       "description": "Tooling Inventory for Daimler Toolings regarding the sended list.",
