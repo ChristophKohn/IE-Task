@@ -1,6 +1,18 @@
 {
   "tasks": [
     {
+      "id": "lvww7xb0",
+      "title": "One Pager DZL",
+      "description": "Create and Handover one Page report to Production regarding DZL on Painting Frame",
+      "deadline": "2026-08-21",
+      "assignee": "Jula, Nikolaos",
+      "category": "IE Task",
+      "status": "offen",
+      "createdAt": "2026-08-17T07:26:51.196Z",
+      "completedAt": null,
+      "subitems": []
+    },
+    {
       "id": "cajh3yum",
       "title": "Install new Crossbars",
       "description": "New crossbars for universal DZL Painting frames installation",
