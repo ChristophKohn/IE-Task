@@ -1,6 +1,29 @@
 {
   "tasks": [
     {
+      "id": "qhjb8xkq",
+      "title": "Prepare Colour Samples Bentley",
+      "description": "New Colour Samples for Code 99P",
+      "deadline": "2026-09-14",
+      "assignee": "Kohn, Christoph",
+      "category": "Customer",
+      "status": "offen",
+      "createdAt": "2026-08-17T07:12:36.773Z",
+      "completedAt": null,
+      "subitems": [
+        {
+          "id": "c779com1",
+          "text": "Prepare Colour samples request",
+          "done": false
+        },
+        {
+          "id": "dmeil6ir",
+          "text": "Explain and show to Bentley",
+          "done": false
+        }
+      ]
+    },
+    {
       "id": "r3gjt4ui",
       "title": "Check settings RTF Mercedes",
       "description": "Regarding Test request from Baiya. Please check the possible settings.",
