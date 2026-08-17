@@ -1,6 +1,29 @@
 {
   "tasks": [
     {
+      "id": "zbg8bjp0",
+      "title": "New universal Crossbar",
+      "description": "Create more universal Crossbar for DZL Painting frame. Which we can add additional on current setting.",
+      "deadline": "2026-08-28",
+      "assignee": "Yurtyapan, Ilker",
+      "category": "IE Task",
+      "status": "offen",
+      "createdAt": "2026-08-17T07:28:28.705Z",
+      "completedAt": null,
+      "subitems": [
+        {
+          "id": "c1pfnbhs",
+          "text": "Search more cross bar",
+          "done": false
+        },
+        {
+          "id": "8yjrwqvu",
+          "text": "handover production for building",
+          "done": false
+        }
+      ]
+    },
+    {
       "id": "lvww7xb0",
       "title": "One Pager DZL",
       "description": "Create and Handover one Page report to Production regarding DZL on Painting Frame",
