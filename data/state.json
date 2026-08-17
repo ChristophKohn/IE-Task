@@ -1,6 +1,18 @@
 {
   "tasks": [
     {
+      "id": "d0tszi7l",
+      "title": "WI Polisching X174",
+      "description": "Update WI for X174 in polishing regarding Mail from Wagner",
+      "deadline": "2026-08-28",
+      "assignee": "Baiya, Lu",
+      "category": "Customer",
+      "status": "offen",
+      "createdAt": "2026-08-17T12:33:57.929Z",
+      "completedAt": null,
+      "subitems": []
+    },
+    {
       "id": "lvww7xb0",
       "title": "One Pager DZL",
       "description": "Create and Handover one Page report to Production regarding DZL on Painting Frame",
