@@ -1,6 +1,18 @@
 {
   "tasks": [
     {
+      "id": "4720ct3j",
+      "title": "Inventory VW Tooling",
+      "description": "Regarding Mail from Mrs. Donato. Please finish tooling inventory. Feedback to her",
+      "deadline": "2026-08-28",
+      "assignee": "Baiya, Lu",
+      "category": "Customer",
+      "status": "offen",
+      "createdAt": "2026-08-17T07:08:53.215Z",
+      "completedAt": null,
+      "subitems": []
+    },
+    {
       "id": "mqac900q",
       "title": "E80 ZLS Assembly Layout Planning",
       "description": "E80 and T-MY ZLS share one assembly machine. The layout needs to be replanned to reduce unnecessary material handling and improve efficiency.",
