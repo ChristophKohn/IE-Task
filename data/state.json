@@ -146,7 +146,7 @@
       "deadline": "2026-09-04",
       "assignee": "Kohn, Christoph",
       "category": "Management",
-      "status": "pruefung",
+      "status": "erledigt",
       "createdAt": "2026-08-12T15:30:13.091Z",
       "completedAt": "2026-08-17T07:23:10.506Z",
       "subitems": [
@@ -161,7 +161,7 @@
           "done": true
         }
       ],
-      "confirmedAt": null
+      "confirmedAt": "2026-08-17T07:25:47.861Z"
     },
     {
       "id": "dv4v7o71",
