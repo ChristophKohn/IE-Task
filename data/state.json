@@ -1,27 +1,16 @@
 {
   "tasks": [
     {
-      "id": "qhjb8xkq",
-      "title": "Prepare Colour Samples Bentley",
-      "description": "New Colour Samples for Code 99P",
-      "deadline": "2026-09-14",
-      "assignee": "Kohn, Christoph",
+      "id": "478qldoy",
+      "title": "Tooling Inventory Mercedes",
+      "description": "Tooling Inventory for Daimler Toolings regarding the sended list.",
+      "deadline": "2026-08-28",
+      "assignee": "Baiya, Lu",
       "category": "Customer",
       "status": "offen",
-      "createdAt": "2026-08-17T07:12:36.773Z",
+      "createdAt": "2026-08-17T07:13:10.385Z",
       "completedAt": null,
-      "subitems": [
-        {
-          "id": "c779com1",
-          "text": "Prepare Colour samples request",
-          "done": false
-        },
-        {
-          "id": "dmeil6ir",
-          "text": "Explain and show to Bentley",
-          "done": false
-        }
-      ]
+      "subitems": []
     },
     {
       "id": "r3gjt4ui",
