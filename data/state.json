@@ -226,7 +226,7 @@
         {
           "id": "4xv1eutd",
           "text": "Talk with Siemens Posibilities",
-          "done": false
+          "done": true
         },
         {
           "id": "w8hx5mze",
@@ -243,7 +243,8 @@
           "text": "PR from our side",
           "done": false
         }
-      ]
+      ],
+      "confirmedAt": null
     },
     {
       "id": "6me3gjg8",
