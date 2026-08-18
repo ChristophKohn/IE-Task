@@ -1,6 +1,29 @@
 {
   "tasks": [
     {
+      "id": "zq38jr3o",
+      "title": "New Floor RTF",
+      "description": "RTF need new Floor like Clear Coat. Easy to clean",
+      "deadline": "2026-08-28",
+      "assignee": "Kohn, Christoph",
+      "category": "Management",
+      "status": "offen",
+      "createdAt": "2026-08-18T08:49:24.674Z",
+      "completedAt": null,
+      "subitems": [
+        {
+          "id": "wlze74vo",
+          "text": "Check possible paints",
+          "done": false
+        },
+        {
+          "id": "4oyuwv3j",
+          "text": "Offer from Supplier",
+          "done": false
+        }
+      ]
+    },
+    {
       "id": "bi49ufir",
       "title": "Create new Cross bars DZL",
       "description": "New cross bars need to be created and handover",
