@@ -475,9 +475,9 @@
       "deadline": "2026-08-13",
       "assignee": "Rahnfeld, Hans-Georg",
       "category": "EHS Task",
-      "status": "offen",
+      "status": "pruefung",
       "createdAt": "2026-08-10T08:33:45.890Z",
-      "completedAt": null,
+      "completedAt": "2026-08-18T07:51:06.997Z",
       "confirmedAt": null,
       "subitems": []
     },
