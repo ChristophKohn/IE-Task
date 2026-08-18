@@ -475,10 +475,10 @@
       "deadline": "2026-08-13",
       "assignee": "Rahnfeld, Hans-Georg",
       "category": "EHS Task",
-      "status": "pruefung",
+      "status": "erledigt",
       "createdAt": "2026-08-10T08:33:45.890Z",
       "completedAt": "2026-08-18T07:51:06.997Z",
-      "confirmedAt": null,
+      "confirmedAt": "2026-08-18T07:52:10.028Z",
       "subitems": []
     },
     {
@@ -696,10 +696,10 @@
       "deadline": "2026-08-12",
       "assignee": "Lize, Cai",
       "category": "Government",
-      "status": "erledigt",
+      "status": "pruefung",
       "createdAt": "2026-08-05T16:34:59.793Z",
       "completedAt": "2026-08-17T21:39:39.530Z",
-      "confirmedAt": "2026-08-18T07:52:05.609Z",
+      "confirmedAt": null,
       "subitems": []
     },
     {
