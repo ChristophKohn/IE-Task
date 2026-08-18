@@ -1,6 +1,34 @@
 {
   "tasks": [
     {
+      "id": "bi49ufir",
+      "title": "Create new Cross bars DZL",
+      "description": "New cross bars need to be created and handover",
+      "deadline": "2026-08-28",
+      "assignee": "Yurtyapan, Ilker",
+      "category": "IE Task",
+      "status": "offen",
+      "createdAt": "2026-08-18T08:46:55.869Z",
+      "completedAt": null,
+      "subitems": [
+        {
+          "id": "9bxnqltz",
+          "text": "Transport to M1",
+          "done": false
+        },
+        {
+          "id": "ai030lv9",
+          "text": "Handover to Jiawei",
+          "done": false
+        },
+        {
+          "id": "09jh4lc6",
+          "text": "Handover to Kenan",
+          "done": false
+        }
+      ]
+    },
+    {
       "id": "d0tszi7l",
       "title": "WI Polisching X174",
       "description": "Update WI for X174 in polishing regarding Mail from Wagner",
