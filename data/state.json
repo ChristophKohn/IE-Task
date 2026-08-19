@@ -1,6 +1,34 @@
 {
   "tasks": [
     {
+      "id": "ullzemtw",
+      "title": "Scratches X174 DZl",
+      "description": "Scratches always same position after anodizing",
+      "deadline": "2026-08-20",
+      "assignee": "Yurtyapan, Ilker",
+      "category": "QS Task",
+      "status": "offen",
+      "createdAt": "2026-08-19T10:44:07.868Z",
+      "completedAt": null,
+      "subitems": [
+        {
+          "id": "2srbv3od",
+          "text": "Check Anodizing Handling",
+          "done": false
+        },
+        {
+          "id": "uazhraim",
+          "text": "Rack need to be checked",
+          "done": false
+        },
+        {
+          "id": "jgg4ctsz",
+          "text": "One Page report",
+          "done": false
+        }
+      ]
+    },
+    {
       "id": "jyic9asb",
       "title": "Construction Approval M1",
       "description": "Next to Jumbo Building gras and trees need to remove. We want to use as storage area",
