@@ -158,11 +158,10 @@
       "deadline": "2026-08-19",
       "assignee": "Song, Wanxin",
       "category": "IE Task",
-      "status": "erledigt",
+      "status": "pruefung",
       "createdAt": "2026-08-14T09:29:48.871Z",
       "completedAt": "2026-08-18T15:11:47.401Z",
-      "subitems": [],
-      "confirmedAt": "2026-08-19T09:34:39.418Z"
+      "subitems": []
     },
     {
       "id": "645ni8ui",
@@ -763,9 +762,9 @@
       "deadline": "2026-08-28",
       "assignee": "Kohn, Christoph",
       "category": "EHS Task",
-      "status": "offen",
+      "status": "pruefung",
       "createdAt": "2026-08-05T14:29:07.646Z",
-      "completedAt": null,
+      "completedAt": "2026-08-19T09:34:50.902Z",
       "confirmedAt": null,
       "subitems": []
     },
