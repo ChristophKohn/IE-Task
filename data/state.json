@@ -1,6 +1,39 @@
 {
   "tasks": [
     {
+      "id": "jyic9asb",
+      "title": "Construction Approval M1",
+      "description": "Next to Jumbo Building gras and trees need to remove. We want to use as storage area",
+      "deadline": "2026-09-30",
+      "assignee": "Jula, Nikolaos",
+      "category": "Management",
+      "status": "offen",
+      "createdAt": "2026-08-19T09:48:57.385Z",
+      "completedAt": null,
+      "subitems": [
+        {
+          "id": "vetf05fr",
+          "text": "Ask for requests from Goverment",
+          "done": false
+        },
+        {
+          "id": "gjqysyq2",
+          "text": "Send all needed documents to goverment",
+          "done": false
+        },
+        {
+          "id": "dc8hqmr6",
+          "text": "Get offers for construction",
+          "done": false
+        },
+        {
+          "id": "95xalix0",
+          "text": "Planing documents",
+          "done": false
+        }
+      ]
+    },
+    {
       "id": "r4furvs7",
       "title": "New Trolly instalation",
       "description": "New trollys arrived. Need installation.",
