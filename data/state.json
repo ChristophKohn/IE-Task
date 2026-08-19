@@ -1,6 +1,49 @@
 {
   "tasks": [
     {
+      "id": "s1bbzq8n",
+      "title": "Upgrade De-Painting Process",
+      "description": "Improve De Painting Process. Specially Fysam Satin Black. \nNew Process: De-Painting --> Directly Painting again",
+      "deadline": "2026-09-30",
+      "assignee": "Jula, Nikolaos",
+      "category": "Developing",
+      "status": "offen",
+      "createdAt": "2026-08-19T15:18:48.742Z",
+      "completedAt": null,
+      "subitems": [
+        {
+          "id": "hturqh26",
+          "text": "Start Test Batch",
+          "done": false
+        },
+        {
+          "id": "hsgalzo7",
+          "text": "Documentation about Problems",
+          "done": false
+        },
+        {
+          "id": "gptgpet8",
+          "text": "Plan to solve",
+          "done": false
+        },
+        {
+          "id": "xn7ck0gp",
+          "text": "Big Batch Testing",
+          "done": false
+        },
+        {
+          "id": "e7sx2xew",
+          "text": "YR >75%",
+          "done": false
+        },
+        {
+          "id": "z8xycjp2",
+          "text": "Handover Production",
+          "done": false
+        }
+      ]
+    },
+    {
       "id": "ullzemtw",
       "title": "Scratches X174 DZl",
       "description": "Scratches always same position after anodizing",
