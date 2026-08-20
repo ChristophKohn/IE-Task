@@ -80,12 +80,12 @@
         {
           "id": "2srbv3od",
           "text": "Check Anodizing Handling",
-          "done": false
+          "done": true
         },
         {
           "id": "uazhraim",
           "text": "Rack need to be checked",
-          "done": true
+          "done": false
         },
         {
           "id": "jgg4ctsz",
