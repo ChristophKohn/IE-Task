@@ -85,12 +85,12 @@
         {
           "id": "uazhraim",
           "text": "Rack need to be checked",
-          "done": false
+          "done": true
         },
         {
           "id": "jgg4ctsz",
           "text": "One Page report",
-          "done": true
+          "done": false
         }
       ],
       "confirmedAt": null
