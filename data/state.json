@@ -160,7 +160,7 @@
         {
           "id": "vetf05fr",
           "text": "Ask for requests from Goverment",
-          "done": false
+          "done": true
         },
         {
           "id": "gjqysyq2",
@@ -177,7 +177,8 @@
           "text": "Planing documents",
           "done": false
         }
-      ]
+      ],
+      "confirmedAt": null
     },
     {
       "id": "r4furvs7",
@@ -1152,9 +1153,9 @@
       "deadline": "2026-08-21",
       "assignee": "Jula, Nikolaos",
       "category": "Developing",
-      "status": "pruefung",
+      "status": "offen",
       "createdAt": "2026-08-05T06:51:59.197Z",
-      "completedAt": "2026-08-20T14:03:50.150Z",
+      "completedAt": null,
       "confirmedAt": null,
       "subitems": []
     },
