@@ -160,12 +160,12 @@
         {
           "id": "vetf05fr",
           "text": "Ask for requests from Goverment",
-          "done": true
+          "done": false
         },
         {
           "id": "gjqysyq2",
           "text": "Send all needed documents to goverment",
-          "done": false
+          "done": true
         },
         {
           "id": "dc8hqmr6",
