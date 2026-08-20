@@ -88,7 +88,7 @@
         {
           "id": "hturqh26",
           "text": "Start Test Batch",
-          "done": true
+          "done": false
         },
         {
           "id": "hsgalzo7",
@@ -166,7 +166,7 @@
         {
           "id": "gjqysyq2",
           "text": "Send all needed documents to goverment",
-          "done": true
+          "done": false
         },
         {
           "id": "dc8hqmr6",
