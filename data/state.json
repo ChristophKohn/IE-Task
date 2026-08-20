@@ -88,12 +88,12 @@
         {
           "id": "hturqh26",
           "text": "Start Test Batch",
-          "done": true
+          "done": false
         },
         {
           "id": "hsgalzo7",
           "text": "Documentation about Problems",
-          "done": false
+          "done": true
         },
         {
           "id": "gptgpet8",
