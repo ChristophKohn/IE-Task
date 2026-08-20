@@ -88,7 +88,7 @@
         {
           "id": "hturqh26",
           "text": "Start Test Batch",
-          "done": false
+          "done": true
         },
         {
           "id": "hsgalzo7",
@@ -115,7 +115,8 @@
           "text": "Handover Production",
           "done": false
         }
-      ]
+      ],
+      "confirmedAt": null
     },
     {
       "id": "ullzemtw",
@@ -165,7 +166,7 @@
         {
           "id": "gjqysyq2",
           "text": "Send all needed documents to goverment",
-          "done": false
+          "done": true
         },
         {
           "id": "dc8hqmr6",
