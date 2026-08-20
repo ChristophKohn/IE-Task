@@ -1,6 +1,34 @@
 {
   "tasks": [
     {
+      "id": "5ou1748g",
+      "title": "Surface Samples Brushing",
+      "description": "We need surface Brushing (Cyrcle) than AC1 anodizing and Painting for BMW Design",
+      "deadline": "2026-08-28",
+      "assignee": "Jula, Nikolaos",
+      "category": "Developing",
+      "status": "offen",
+      "createdAt": "2026-08-20T09:23:30.101Z",
+      "completedAt": null,
+      "subitems": [
+        {
+          "id": "y2jjq2kk",
+          "text": "Different Brushing Test",
+          "done": false
+        },
+        {
+          "id": "y6gn0z67",
+          "text": "Anodizing and Painting",
+          "done": false
+        },
+        {
+          "id": "qtrxdhsn",
+          "text": "Discussing with Kohn and Sirrenberg",
+          "done": false
+        }
+      ]
+    },
+    {
       "id": "da9qtsvu",
       "title": "Prepare C174 FSS Sample",
       "description": "We need 30-40 pcs. for Paint testing with PL New colours",
