@@ -80,7 +80,7 @@
         {
           "id": "2srbv3od",
           "text": "Check Anodizing Handling",
-          "done": false
+          "done": true
         },
         {
           "id": "uazhraim",
@@ -92,7 +92,8 @@
           "text": "One Page report",
           "done": false
         }
-      ]
+      ],
+      "confirmedAt": null
     },
     {
       "id": "jyic9asb",
