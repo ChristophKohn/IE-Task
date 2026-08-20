@@ -233,14 +233,15 @@
         {
           "id": "wlze74vo",
           "text": "Check possible paints",
-          "done": false
+          "done": true
         },
         {
           "id": "4oyuwv3j",
           "text": "Offer from Supplier",
           "done": false
         }
-      ]
+      ],
+      "confirmedAt": null
     },
     {
       "id": "bi49ufir",
