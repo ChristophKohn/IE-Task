@@ -1,6 +1,29 @@
 {
   "tasks": [
     {
+      "id": "5onsm8gt",
+      "title": "Temper Ofen Check",
+      "description": "Test different temperatures and timmings",
+      "deadline": "2026-08-28",
+      "assignee": "Geiger, Karl",
+      "category": "IE Task",
+      "status": "offen",
+      "createdAt": "2026-08-20T08:02:56.766Z",
+      "completedAt": null,
+      "subitems": [
+        {
+          "id": "r6wytrgw",
+          "text": "Check Temperature is correct or not",
+          "done": false
+        },
+        {
+          "id": "hxrgh7r9",
+          "text": "Different Temperature test and test hardness",
+          "done": false
+        }
+      ]
+    },
+    {
       "id": "s1bbzq8n",
       "title": "Upgrade De-Painting Process",
       "description": "Improve De Painting Process. Specially Fysam Satin Black. \nNew Process: De-Painting --> Directly Painting again",
