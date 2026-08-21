@@ -35,9 +35,9 @@
       "deadline": "2026-08-21",
       "assignee": "Geiger, Karl",
       "category": "Management",
-      "status": "offen",
+      "status": "pruefung",
       "createdAt": "2026-08-21T07:19:17.927Z",
-      "completedAt": null,
+      "completedAt": "2026-08-21T14:10:06.171Z",
       "subitems": []
     },
     {
@@ -470,12 +470,12 @@
         {
           "id": "eyvcgrmp",
           "text": "Working Instruction Update",
-          "done": true
+          "done": false
         },
         {
           "id": "47my0dfy",
           "text": "Training Supervisor",
-          "done": false
+          "done": true
         }
       ],
       "confirmedAt": null
