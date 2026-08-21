@@ -75,14 +75,14 @@
       "deadline": "2026-08-21",
       "assignee": "Jula, Nikolaos",
       "category": "Developing",
-      "status": "offen",
+      "status": "pruefung",
       "createdAt": "2026-08-20T09:08:29.434Z",
-      "completedAt": null,
+      "completedAt": "2026-08-21T11:53:57.745Z",
       "subitems": [
         {
           "id": "01vo2lbo",
           "text": "Prepare samples before Painting",
-          "done": false
+          "done": true
         },
         {
           "id": "zqb6dal8",
