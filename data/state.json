@@ -35,11 +35,10 @@
       "deadline": "2026-08-21",
       "assignee": "Geiger, Karl",
       "category": "Management",
-      "status": "erledigt",
+      "status": "pruefung",
       "createdAt": "2026-08-21T07:19:17.927Z",
       "completedAt": "2026-08-21T14:10:06.171Z",
-      "subitems": [],
-      "confirmedAt": "2026-08-21T14:13:16.108Z"
+      "subitems": []
     },
     {
       "id": "5ou1748g",
@@ -464,7 +463,7 @@
       "deadline": "2026-08-14",
       "assignee": "Geiger, Karl",
       "category": "IE Task",
-      "status": "pruefung",
+      "status": "erledigt",
       "createdAt": "2026-08-13T06:10:50.966Z",
       "completedAt": "2026-08-21T14:12:35.447Z",
       "subitems": [
@@ -479,7 +478,7 @@
           "done": true
         }
       ],
-      "confirmedAt": null
+      "confirmedAt": "2026-08-21T14:13:21.816Z"
     },
     {
       "id": "148y69bl",
