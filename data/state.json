@@ -470,12 +470,12 @@
         {
           "id": "eyvcgrmp",
           "text": "Working Instruction Update",
-          "done": true
+          "done": false
         },
         {
           "id": "47my0dfy",
           "text": "Training Supervisor",
-          "done": false
+          "done": true
         }
       ],
       "confirmedAt": null
