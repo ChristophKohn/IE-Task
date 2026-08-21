@@ -166,7 +166,7 @@
       "deadline": "2026-08-20",
       "assignee": "Yurtyapan, Ilker",
       "category": "QS Task",
-      "status": "erledigt",
+      "status": "pruefung",
       "createdAt": "2026-08-19T10:44:07.868Z",
       "completedAt": "2026-08-21T10:53:46.895Z",
       "subitems": [
@@ -186,7 +186,7 @@
           "done": true
         }
       ],
-      "confirmedAt": "2026-08-21T13:02:14.774Z"
+      "confirmedAt": null
     },
     {
       "id": "jyic9asb",
@@ -333,10 +333,11 @@
       "deadline": "2026-08-21",
       "assignee": "Jula, Nikolaos",
       "category": "IE Task",
-      "status": "pruefung",
+      "status": "erledigt",
       "createdAt": "2026-08-17T07:26:51.196Z",
       "completedAt": "2026-08-21T11:55:32.022Z",
-      "subitems": []
+      "subitems": [],
+      "confirmedAt": "2026-08-21T13:02:18.329Z"
     },
     {
       "id": "cajh3yum",
