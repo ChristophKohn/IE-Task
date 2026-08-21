@@ -165,9 +165,9 @@
       "deadline": "2026-08-20",
       "assignee": "Yurtyapan, Ilker",
       "category": "QS Task",
-      "status": "offen",
+      "status": "pruefung",
       "createdAt": "2026-08-19T10:44:07.868Z",
-      "completedAt": null,
+      "completedAt": "2026-08-21T10:53:46.895Z",
       "subitems": [
         {
           "id": "2srbv3od",
@@ -182,7 +182,7 @@
         {
           "id": "jgg4ctsz",
           "text": "One Page report",
-          "done": false
+          "done": true
         }
       ],
       "confirmedAt": null
