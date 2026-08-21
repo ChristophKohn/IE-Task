@@ -463,14 +463,14 @@
       "deadline": "2026-08-14",
       "assignee": "Geiger, Karl",
       "category": "IE Task",
-      "status": "offen",
+      "status": "pruefung",
       "createdAt": "2026-08-13T06:10:50.966Z",
-      "completedAt": null,
+      "completedAt": "2026-08-21T14:12:35.447Z",
       "subitems": [
         {
           "id": "eyvcgrmp",
           "text": "Working Instruction Update",
-          "done": false
+          "done": true
         },
         {
           "id": "47my0dfy",
