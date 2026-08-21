@@ -1,6 +1,18 @@
 {
   "tasks": [
     {
+      "id": "j3upukc9",
+      "title": "Support the decision",
+      "description": "The paint cart box is defective and is not an aesthetically pleasing feature of ARA1. It has never worked as it was planned for. The container mechanism is broken for some time. We keep the pump and the funktional component; the rest should be dismantled and recycled. I need all of this black plastic plates for a other project at M1.  Please assist me with this - and arrange for the dismantling.",
+      "deadline": "2026-09-08",
+      "assignee": "Kohn, Christoph",
+      "category": "IE Task",
+      "status": "offen",
+      "createdAt": "2026-08-21T16:08:54.965Z",
+      "completedAt": null,
+      "subitems": []
+    },
+    {
       "id": "dyckr15k",
       "title": "A to B Improvement Test",
       "description": "Different settings in Anodizing to improve A to B process. C174 DZL",
