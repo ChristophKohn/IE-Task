@@ -75,7 +75,7 @@
       "deadline": "2026-08-21",
       "assignee": "Jula, Nikolaos",
       "category": "Developing",
-      "status": "erledigt",
+      "status": "pruefung",
       "createdAt": "2026-08-20T09:08:29.434Z",
       "completedAt": "2026-08-21T11:54:52.214Z",
       "subitems": [
@@ -90,7 +90,7 @@
           "done": true
         }
       ],
-      "confirmedAt": "2026-08-21T13:02:39.742Z"
+      "confirmedAt": null
     },
     {
       "id": "5onsm8gt",
@@ -333,10 +333,11 @@
       "deadline": "2026-08-21",
       "assignee": "Jula, Nikolaos",
       "category": "IE Task",
-      "status": "pruefung",
+      "status": "erledigt",
       "createdAt": "2026-08-17T07:26:51.196Z",
       "completedAt": "2026-08-21T11:55:32.022Z",
-      "subitems": []
+      "subitems": [],
+      "confirmedAt": "2026-08-21T13:02:44.655Z"
     },
     {
       "id": "cajh3yum",
