@@ -1,6 +1,18 @@
 {
   "tasks": [
     {
+      "id": "i9qt3gj9",
+      "title": "Repair Tooling Tesla MY Zlss",
+      "description": "Broken Tool. Find supplier repair today",
+      "deadline": "2026-08-21",
+      "assignee": "Geiger, Karl",
+      "category": "Management",
+      "status": "offen",
+      "createdAt": "2026-08-21T07:19:17.927Z",
+      "completedAt": null,
+      "subitems": []
+    },
+    {
       "id": "5ou1748g",
       "title": "Surface Samples Brushing",
       "description": "We need surface Brushing (Cyrcle) than AC1 anodizing and Painting for BMW Design",
