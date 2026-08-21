@@ -82,14 +82,15 @@
         {
           "id": "01vo2lbo",
           "text": "Prepare samples before Painting",
-          "done": false
+          "done": true
         },
         {
           "id": "zqb6dal8",
           "text": "Handover to PL",
           "done": false
         }
-      ]
+      ],
+      "confirmedAt": null
     },
     {
       "id": "5onsm8gt",
