@@ -35,10 +35,11 @@
       "deadline": "2026-08-21",
       "assignee": "Geiger, Karl",
       "category": "Management",
-      "status": "pruefung",
+      "status": "erledigt",
       "createdAt": "2026-08-21T07:19:17.927Z",
       "completedAt": "2026-08-21T14:10:06.171Z",
-      "subitems": []
+      "subitems": [],
+      "confirmedAt": "2026-08-21T14:13:16.108Z"
     },
     {
       "id": "5ou1748g",
@@ -478,7 +479,7 @@
           "done": true
         }
       ],
-      "confirmedAt": "2026-08-21T14:13:21.816Z"
+      "confirmedAt": "2026-08-21T14:13:33.023Z"
     },
     {
       "id": "148y69bl",
