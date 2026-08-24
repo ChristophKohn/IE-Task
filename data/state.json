@@ -1,6 +1,18 @@
 {
   "tasks": [
     {
+      "id": "nf0unjwq",
+      "title": "Dis assamble Paint Water Area in ARA 1",
+      "description": "Support for Mr. Rahnfeld to disassamble the Tooling",
+      "deadline": "2026-09-18",
+      "assignee": "Kohn, Christoph",
+      "category": "IH Support",
+      "status": "offen",
+      "createdAt": "2026-08-24T06:48:06.078Z",
+      "completedAt": null,
+      "subitems": []
+    },
+    {
       "id": "sqqfglwt",
       "title": "Change Waste Water Treatment Anod 1",
       "description": "Currently the Waste Water is treated with evaporator from powder. Need to be changed. Treating again with ARA 1",
