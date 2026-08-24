@@ -1,6 +1,29 @@
 {
   "tasks": [
     {
+      "id": "rw3dk9b6",
+      "title": "Disasamble Tooling Waste Water ARA 1",
+      "description": "The Tooling is broken and not in use",
+      "deadline": "2026-09-04",
+      "assignee": "Rahnfeld, Hans-Georg",
+      "category": "IH Support",
+      "status": "offen",
+      "createdAt": "2026-08-24T06:39:09.560Z",
+      "completedAt": null,
+      "subitems": [
+        {
+          "id": "ka65st21",
+          "text": "Disassamble needed material",
+          "done": false
+        },
+        {
+          "id": "s2hou2qp",
+          "text": "Prepare for transport",
+          "done": false
+        }
+      ]
+    },
+    {
       "id": "j3upukc9",
       "title": "Support the decision",
       "description": "The paint cart box is defective and is not an aesthetically pleasing feature of ARA1. It has never worked as it was planned for. The container mechanism is broken for some time. We keep the pump and the funktional component; the rest should be dismantled and recycled. I need all of this black plastic plates for a other project at M1.  Please assist me with this - and arrange for the dismantling.",
