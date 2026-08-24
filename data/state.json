@@ -1,6 +1,39 @@
 {
   "tasks": [
     {
+      "id": "sqqfglwt",
+      "title": "Change Waste Water Treatment Anod 1",
+      "description": "Currently the Waste Water is treated with evaporator from powder. Need to be changed. Treating again with ARA 1",
+      "deadline": "2026-09-15",
+      "assignee": "Rahnfeld, Hans-Georg",
+      "category": "Management",
+      "status": "offen",
+      "createdAt": "2026-08-24T06:43:21.398Z",
+      "completedAt": null,
+      "subitems": [
+        {
+          "id": "4yaf543r",
+          "text": "Empty Mud Tank",
+          "done": false
+        },
+        {
+          "id": "40ey3zrt",
+          "text": "Test treatment in Anod 1",
+          "done": false
+        },
+        {
+          "id": "moeyfih3",
+          "text": "Analyse all needed Points",
+          "done": false
+        },
+        {
+          "id": "p0d97b8t",
+          "text": "Send to Mr. Kohn for decision",
+          "done": false
+        }
+      ]
+    },
+    {
       "id": "rw3dk9b6",
       "title": "Disasamble Tooling Waste Water ARA 1",
       "description": "The Tooling is broken and not in use",
