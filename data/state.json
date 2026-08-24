@@ -1,6 +1,29 @@
 {
   "tasks": [
     {
+      "id": "io9h3ko9",
+      "title": "Shutdown Evaporator",
+      "description": "In M1 the Evaporator is not needed. Shut down the Evaporator",
+      "deadline": "2026-08-28",
+      "assignee": "Rahnfeld, Hans-Georg",
+      "category": "IE Task",
+      "status": "offen",
+      "createdAt": "2026-08-24T14:14:19.883Z",
+      "completedAt": null,
+      "subitems": [
+        {
+          "id": "tud9lpyj",
+          "text": "Evaporator Shutdown",
+          "done": false
+        },
+        {
+          "id": "oz3jep2y",
+          "text": "Training to Employee not use anymore",
+          "done": false
+        }
+      ]
+    },
+    {
       "id": "qvucfkeq",
       "title": "Offer new Tank",
       "description": "For De-Greasing treatment internal new Tank is needed",
