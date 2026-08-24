@@ -1,6 +1,29 @@
 {
   "tasks": [
     {
+      "id": "esr2h7ko",
+      "title": "Remove IBC",
+      "description": "In Process Water area a lot IBC with Chemicals",
+      "deadline": "2026-09-14",
+      "assignee": "Rahnfeld, Hans-Georg",
+      "category": "EHS Task",
+      "status": "offen",
+      "createdAt": "2026-08-24T14:12:05.037Z",
+      "completedAt": null,
+      "subitems": [
+        {
+          "id": "4nm2s5qz",
+          "text": "Remove IBC with old Electro Polishing",
+          "done": false
+        },
+        {
+          "id": "fmdha1xy",
+          "text": "Remove IBC with old De Greasing Chemicals",
+          "done": false
+        }
+      ]
+    },
+    {
       "id": "nf0unjwq",
       "title": "Dis assamble Paint Water Area in ARA 1",
       "description": "Support for Mr. Rahnfeld to disassamble the Tooling",
