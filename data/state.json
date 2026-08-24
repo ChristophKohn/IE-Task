@@ -1,6 +1,29 @@
 {
   "tasks": [
     {
+      "id": "u98dyaef",
+      "title": "Software Waste Water",
+      "description": "Ask offer from Ditec regarding Software takeover from Wanner in Waste Water area",
+      "deadline": "2026-09-14",
+      "assignee": "Jula, Nikolaos",
+      "category": "IE Task",
+      "status": "offen",
+      "createdAt": "2026-08-24T14:15:13.436Z",
+      "completedAt": null,
+      "subitems": [
+        {
+          "id": "yoymqzrp",
+          "text": "Offer new Software from Ditec",
+          "done": false
+        },
+        {
+          "id": "59jgsk6n",
+          "text": "Timeline for Change",
+          "done": false
+        }
+      ]
+    },
+    {
       "id": "io9h3ko9",
       "title": "Shutdown Evaporator",
       "description": "In M1 the Evaporator is not needed. Shut down the Evaporator",
