@@ -1,6 +1,29 @@
 {
   "tasks": [
     {
+      "id": "qvucfkeq",
+      "title": "Offer new Tank",
+      "description": "For De-Greasing treatment internal new Tank is needed",
+      "deadline": "2026-09-14",
+      "assignee": "Rahnfeld, Hans-Georg",
+      "category": "IE Task",
+      "status": "offen",
+      "createdAt": "2026-08-24T14:13:19.683Z",
+      "completedAt": null,
+      "subitems": [
+        {
+          "id": "pmecl6of",
+          "text": "Get offer for new storage tank 5m³ including Ventil and Pump",
+          "done": false
+        },
+        {
+          "id": "zxddtnbo",
+          "text": "Create short plan for System",
+          "done": false
+        }
+      ]
+    },
+    {
       "id": "esr2h7ko",
       "title": "Remove IBC",
       "description": "In Process Water area a lot IBC with Chemicals",
