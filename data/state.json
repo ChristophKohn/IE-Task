@@ -404,10 +404,11 @@
       "deadline": "2026-08-28",
       "assignee": "Baiya, Lu",
       "category": "Customer",
-      "status": "pruefung",
+      "status": "erledigt",
       "createdAt": "2026-08-17T12:33:57.929Z",
       "completedAt": "2026-08-24T13:46:12.891Z",
-      "subitems": []
+      "subitems": [],
+      "confirmedAt": "2026-08-24T13:53:46.179Z"
     },
     {
       "id": "lvww7xb0",
