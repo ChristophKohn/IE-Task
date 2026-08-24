@@ -94,7 +94,7 @@
         {
           "id": "k60s5tko",
           "text": "De Greasing reduce to 100sec",
-          "done": false
+          "done": true
         },
         {
           "id": "butte5xg",
@@ -106,7 +106,8 @@
           "text": "Standard without de-greasing",
           "done": false
         }
-      ]
+      ],
+      "confirmedAt": null
     },
     {
       "id": "i9qt3gj9",
