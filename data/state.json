@@ -14,12 +14,12 @@
         {
           "id": "8xmf1i9w",
           "text": "Paint Sample parts",
-          "done": false
+          "done": true
         },
         {
           "id": "8tczp5cs",
           "text": "one part cook test 2h. together with Maas",
-          "done": true
+          "done": false
         }
       ],
       "confirmedAt": null
