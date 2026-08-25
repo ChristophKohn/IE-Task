@@ -7,19 +7,19 @@
       "deadline": "2026-08-25",
       "assignee": "Yurtyapan, Ilker",
       "category": "IE Task",
-      "status": "offen",
+      "status": "pruefung",
       "createdAt": "2026-08-25T06:09:34.023Z",
-      "completedAt": null,
+      "completedAt": "2026-08-25T11:32:04.570Z",
       "subitems": [
         {
           "id": "8xmf1i9w",
           "text": "Paint Sample parts",
-          "done": false
+          "done": true
         },
         {
           "id": "8tczp5cs",
           "text": "one part cook test 2h. together with Maas",
-          "done": false
+          "done": true
         }
       ],
       "confirmedAt": null
