@@ -19,7 +19,7 @@
         {
           "id": "8tczp5cs",
           "text": "one part cook test 2h. together with Maas",
-          "done": true
+          "done": false
         }
       ],
       "confirmedAt": null
@@ -210,7 +210,7 @@
         {
           "id": "k60s5tko",
           "text": "De Greasing reduce to 100sec",
-          "done": false
+          "done": true
         },
         {
           "id": "butte5xg",
