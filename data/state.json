@@ -1,6 +1,34 @@
 {
   "tasks": [
     {
+      "id": "73o0jr35",
+      "title": "Higher Temperature Temperofen",
+      "description": "Higher Temperature for the Parts in the Temperofen",
+      "deadline": "2026-08-27",
+      "assignee": "Baiya, Lu",
+      "category": "IE Task",
+      "status": "offen",
+      "createdAt": "2026-08-25T14:07:03.778Z",
+      "completedAt": null,
+      "subitems": [
+        {
+          "id": "oityodmd",
+          "text": "Prepare the Parts",
+          "done": false
+        },
+        {
+          "id": "bxubrt1c",
+          "text": "Temperture to 200 C°",
+          "done": false
+        },
+        {
+          "id": "q6o7fy76",
+          "text": "Handover the Parts to IE Surface",
+          "done": false
+        }
+      ]
+    },
+    {
       "id": "9hy9f98r",
       "title": "Test Oil and Pasta Tesla",
       "description": "More Oil and Pasta on the part",
