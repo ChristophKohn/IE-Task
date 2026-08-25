@@ -1,6 +1,39 @@
 {
   "tasks": [
     {
+      "id": "go2var9e",
+      "title": "Long Etching",
+      "description": "Etching with 6 mins",
+      "deadline": "2026-08-27",
+      "assignee": "Zhao, Dongyuan",
+      "category": "IE Task",
+      "status": "offen",
+      "createdAt": "2026-08-25T13:59:54.134Z",
+      "completedAt": null,
+      "subitems": [
+        {
+          "id": "xldbh1lu",
+          "text": "Prepare Program",
+          "done": false
+        },
+        {
+          "id": "hlmpcbqd",
+          "text": "Prepare Parts",
+          "done": false
+        },
+        {
+          "id": "2ngzadsx",
+          "text": "Start Test on Anod 3",
+          "done": false
+        },
+        {
+          "id": "pzkhssic",
+          "text": "Evaluation about Test",
+          "done": false
+        }
+      ]
+    },
+    {
       "id": "73zou7lz",
       "title": "Test High Voltage",
       "description": "Test on Elox High Voltage with less parts",
