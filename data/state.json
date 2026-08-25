@@ -1,6 +1,29 @@
 {
   "tasks": [
     {
+      "id": "z5e491lp",
+      "title": "Analysis Tesla Parts",
+      "description": "Analysis Tesla Parts for all 4 Parts",
+      "deadline": "2026-09-04",
+      "assignee": "Jula, Nikolaos",
+      "category": "IE Task",
+      "status": "offen",
+      "createdAt": "2026-08-25T14:13:43.948Z",
+      "completedAt": null,
+      "subitems": [
+        {
+          "id": "0vwwawdn",
+          "text": "Analysis of 3 Parts intern",
+          "done": false
+        },
+        {
+          "id": "q99qd5l5",
+          "text": "Analysis of 1 part",
+          "done": false
+        }
+      ]
+    },
+    {
       "id": "73o0jr35",
       "title": "Higher Temperature Temperofen",
       "description": "Higher Temperature for the Parts in the Temperofen",
