@@ -19,9 +19,10 @@
         {
           "id": "8tczp5cs",
           "text": "one part cook test 2h. together with Maas",
-          "done": false
+          "done": true
         }
-      ]
+      ],
+      "confirmedAt": null
     },
     {
       "id": "u98dyaef",
