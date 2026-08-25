@@ -14,7 +14,7 @@
         {
           "id": "8xmf1i9w",
           "text": "Paint Sample parts",
-          "done": false
+          "done": true
         },
         {
           "id": "8tczp5cs",
@@ -210,7 +210,7 @@
         {
           "id": "k60s5tko",
           "text": "De Greasing reduce to 100sec",
-          "done": true
+          "done": false
         },
         {
           "id": "butte5xg",
