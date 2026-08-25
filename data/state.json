@@ -7,7 +7,7 @@
       "deadline": "2026-08-25",
       "assignee": "Yurtyapan, Ilker",
       "category": "IE Task",
-      "status": "pruefung",
+      "status": "erledigt",
       "createdAt": "2026-08-25T06:09:34.023Z",
       "completedAt": "2026-08-25T11:32:04.570Z",
       "subitems": [
@@ -22,7 +22,7 @@
           "done": true
         }
       ],
-      "confirmedAt": null
+      "confirmedAt": "2026-08-25T12:03:08.659Z"
     },
     {
       "id": "u98dyaef",
