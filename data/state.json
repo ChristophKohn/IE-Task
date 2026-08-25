@@ -1,6 +1,18 @@
 {
   "tasks": [
     {
+      "id": "ujwfiit0",
+      "title": "CT Managment",
+      "description": "CT all Process\nRTF --> Pengwei\nPol --> Baiya\nAnod --> Geiger\nAssambly --> Wanxin",
+      "deadline": "2026-09-29",
+      "assignee": "Geiger, Karl",
+      "category": "IE Task",
+      "status": "offen",
+      "createdAt": "2026-08-25T12:11:25.003Z",
+      "completedAt": null,
+      "subitems": []
+    },
+    {
       "id": "f5hibrvx",
       "title": "Tesla Paint Peel off",
       "description": "After customer compliant Tesla sample parts are made to check",
