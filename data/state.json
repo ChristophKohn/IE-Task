@@ -1,6 +1,39 @@
 {
   "tasks": [
     {
+      "id": "73zou7lz",
+      "title": "Test High Voltage",
+      "description": "Test on Elox High Voltage with less parts",
+      "deadline": "2026-08-27",
+      "assignee": "Yurtyapan, Ilker",
+      "category": "IE Task",
+      "status": "offen",
+      "createdAt": "2026-08-25T13:58:45.018Z",
+      "completedAt": null,
+      "subitems": [
+        {
+          "id": "lqxxt1bl",
+          "text": "Prepare Program",
+          "done": false
+        },
+        {
+          "id": "co25s4y9",
+          "text": "Prepare Parts",
+          "done": false
+        },
+        {
+          "id": "n4nqomv5",
+          "text": "Start Rack",
+          "done": false
+        },
+        {
+          "id": "ivze0mft",
+          "text": "Evaluation from Test",
+          "done": false
+        }
+      ]
+    },
+    {
       "id": "ujwfiit0",
       "title": "CT Managment",
       "description": "CT all Process\nRTF --> Pengwei\nPol --> Baiya\nAnod --> Geiger\nAssambly --> Wanxin",
