@@ -515,7 +515,7 @@
         {
           "id": "r6wytrgw",
           "text": "Check Temperature is correct or not",
-          "done": true
+          "done": false
         },
         {
           "id": "hxrgh7r9",
@@ -854,7 +854,7 @@
         {
           "id": "h3i57h8r",
           "text": "Check possibility",
-          "done": true
+          "done": false
         },
         {
           "id": "hloe0fuh",
@@ -866,8 +866,7 @@
           "text": "integration in Line",
           "done": false
         }
-      ],
-      "confirmedAt": null
+      ]
     },
     {
       "id": "ssziwear",
