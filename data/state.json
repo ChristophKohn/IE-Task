@@ -1,6 +1,29 @@
 {
   "tasks": [
     {
+      "id": "ybt1rdqf",
+      "title": "Order Expander for Production",
+      "description": "New Expander for Production needed in RTF. Packaging Tesla DZL",
+      "deadline": "2026-09-15",
+      "assignee": "Geiger, Karl",
+      "category": "IE Task",
+      "status": "offen",
+      "createdAt": "2026-08-28T10:53:18.237Z",
+      "completedAt": null,
+      "subitems": [
+        {
+          "id": "jlkx15h1",
+          "text": "Create PR and Push",
+          "done": false
+        },
+        {
+          "id": "d71p7h0d",
+          "text": "Handover to Pengwei",
+          "done": false
+        }
+      ]
+    },
+    {
       "id": "z5e491lp",
       "title": "Analysis Tesla Parts",
       "description": "Analysis Tesla Parts for all 4 Parts",
