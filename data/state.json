@@ -966,12 +966,12 @@
         {
           "id": "dj5z3ox6",
           "text": "Handover to Uwe Bayer after Vacation",
-          "done": true
+          "done": false
         },
         {
           "id": "41jk2e1k",
           "text": "PR from our side",
-          "done": false
+          "done": true
         }
       ],
       "confirmedAt": null
