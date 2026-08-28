@@ -992,7 +992,7 @@
         {
           "id": "e192sl4a",
           "text": "Check quantity",
-          "done": false
+          "done": true
         },
         {
           "id": "kf7hmiy1",
@@ -1004,7 +1004,8 @@
           "text": "Order Batch",
           "done": false
         }
-      ]
+      ],
+      "confirmedAt": null
     },
     {
       "id": "tox39lpd",
