@@ -1364,9 +1364,9 @@
       "deadline": "2026-08-21",
       "assignee": "Geiger, Karl",
       "category": "Management",
-      "status": "offen",
+      "status": "pruefung",
       "createdAt": "2026-08-06T07:37:25.376Z",
-      "completedAt": null,
+      "completedAt": "2026-08-28T05:49:41.906Z",
       "confirmedAt": null,
       "subitems": []
     },
@@ -1377,9 +1377,9 @@
       "deadline": "2026-08-21",
       "assignee": "Geiger, Karl",
       "category": "Management",
-      "status": "pruefung",
+      "status": "offen",
       "createdAt": "2026-08-06T07:32:47.922Z",
-      "completedAt": "2026-08-28T05:49:38.449Z",
+      "completedAt": null,
       "confirmedAt": null,
       "subitems": []
     },
