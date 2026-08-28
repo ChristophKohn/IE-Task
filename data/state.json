@@ -121,7 +121,7 @@
         {
           "id": "xldbh1lu",
           "text": "Prepare Program",
-          "done": false
+          "done": true
         },
         {
           "id": "hlmpcbqd",
@@ -138,7 +138,8 @@
           "text": "Evaluation about Test",
           "done": false
         }
-      ]
+      ],
+      "confirmedAt": null
     },
     {
       "id": "73zou7lz",
