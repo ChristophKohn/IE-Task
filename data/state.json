@@ -1913,13 +1913,13 @@
     {
       "name": "Zhao, Dongyuan",
       "department": "IE",
-      "personalnummer": "99040"
+      "personalnummer": "99040",
+      "admin": true
     },
     {
       "name": "Baiya, Lu",
       "department": "IE",
-      "personalnummer": "99054",
-      "admin": true
+      "personalnummer": "99054"
     },
     {
       "name": "Lize, Cai",
