@@ -1716,10 +1716,10 @@
       "deadline": "2026-08-07",
       "assignee": "Zhao, Dongyuan",
       "category": "Management",
-      "status": "pruefung",
+      "status": "erledigt",
       "createdAt": "2026-08-04T15:41:48.259Z",
       "completedAt": "2026-08-28T07:06:44.613Z",
-      "confirmedAt": null,
+      "confirmedAt": "2026-08-28T09:38:52.872Z",
       "subitems": []
     },
     {
@@ -1729,10 +1729,10 @@
       "deadline": "2026-08-18",
       "assignee": "Kohn, Christoph",
       "category": "Government",
-      "status": "erledigt",
+      "status": "pruefung",
       "createdAt": "2026-08-04T15:41:10.999Z",
       "completedAt": "2026-08-28T09:37:57.822Z",
-      "confirmedAt": "2026-08-28T09:38:49.904Z",
+      "confirmedAt": null,
       "subitems": []
     },
     {
