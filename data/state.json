@@ -121,12 +121,12 @@
         {
           "id": "xldbh1lu",
           "text": "Prepare Program",
-          "done": false
+          "done": true
         },
         {
           "id": "hlmpcbqd",
           "text": "Prepare Parts",
-          "done": true
+          "done": false
         },
         {
           "id": "2ngzadsx",
