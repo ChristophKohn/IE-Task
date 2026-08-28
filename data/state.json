@@ -1,6 +1,18 @@
 {
   "tasks": [
     {
+      "id": "d3a0z7b1",
+      "title": "Behandlung stillgelegter Vorrichtungen 闲置工装处理",
+      "description": "1. Erneut prüfen, ob die Betriebsmittel noch benötigt werden oder ob sie auszusondern / zu verschrotten sind.\n\n2. Falls eine Aussonderung/Verschrottung erfolgt: Restwert prüfen und den Aussonderungsprozess einleiten.\n\n3. Falls eine Einlagerung erfolgt: Zuerst nummerieren, in die Gesamtliste aufnehmen, die Nummerierung aushängen/anbringen und den Abtransport ins Werk 1 organisieren.\n1. 再判定是否需要或这报废\n2. 如果报废，检查残值，走报废流程\n3. 如果存储，先编号，计入总清单，悬挂编号，组织拉到1厂。",
+      "deadline": "2026-09-02",
+      "assignee": "Song, Wanxin",
+      "category": "IE Task",
+      "status": "offen",
+      "createdAt": "2026-08-28T21:05:48.769Z",
+      "completedAt": null,
+      "subitems": []
+    },
+    {
       "id": "0opr454w",
       "title": "Abfallöl-Sammelbehälter und Aufbewahrungsort 废油收集容器及存放位置",
       "description": "Das Dokument legt eindeutig fest, welche Behälter für die Rückgewinnung von Altöl verwendet werden sollen und wo diese Behälter aufzubewahren sind. Vor der Schulung wird der Leiter der Vorbehandlungsabteilung geschult. Der Abteilungsleiter führt anschließend eine Weiterschulung für die Schichtmeister und die Hauptwarte (bzw. die Bediener der Hauptkontrollwarte) durch.\n文件明确费油回收用哪种容器，容器存放地点，组织培训前处理车间主任，车间主任给班长及主控转训。",
