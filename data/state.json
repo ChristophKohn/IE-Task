@@ -949,14 +949,14 @@
       "deadline": "2026-08-28",
       "assignee": "Jula, Nikolaos",
       "category": "EHS Task",
-      "status": "offen",
+      "status": "pruefung",
       "createdAt": "2026-08-12T09:34:01.135Z",
-      "completedAt": null,
+      "completedAt": "2026-08-28T12:19:16.263Z",
       "subitems": [
         {
           "id": "4xv1eutd",
           "text": "Talk with Siemens Posibilities",
-          "done": false
+          "done": true
         },
         {
           "id": "w8hx5mze",
@@ -966,7 +966,7 @@
         {
           "id": "dj5z3ox6",
           "text": "Handover to Uwe Bayer after Vacation",
-          "done": false
+          "done": true
         },
         {
           "id": "41jk2e1k",
