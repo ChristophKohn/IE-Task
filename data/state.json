@@ -1,6 +1,18 @@
 {
   "tasks": [
     {
+      "id": "5m8bksqv",
+      "title": "Lagerung neuer GT 新的GT存放",
+      "description": "Neue GT sind in den Innenbereich zu verbringen und an einem dafür vorgesehenen Platz zu lagern. Das willkürliche Abstellen im Freien ist untersagt.\n新GT拉回室内，找专用位置存放，禁止随意放置在室外。",
+      "deadline": "2026-09-01",
+      "assignee": "Yurtyapan, Ilker",
+      "category": "IE Task",
+      "status": "offen",
+      "createdAt": "2026-08-28T21:08:32.727Z",
+      "completedAt": null,
+      "subitems": []
+    },
+    {
       "id": "d3a0z7b1",
       "title": "Behandlung stillgelegter Vorrichtungen 闲置工装处理",
       "description": "1. Erneut prüfen, ob die Betriebsmittel noch benötigt werden oder ob sie auszusondern / zu verschrotten sind.\n\n2. Falls eine Aussonderung/Verschrottung erfolgt: Restwert prüfen und den Aussonderungsprozess einleiten.\n\n3. Falls eine Einlagerung erfolgt: Zuerst nummerieren, in die Gesamtliste aufnehmen, die Nummerierung aushängen/anbringen und den Abtransport ins Werk 1 organisieren.\n1. 再判定是否需要或这报废\n2. 如果报废，检查残值，走报废流程\n3. 如果存储，先编号，计入总清单，悬挂编号，组织拉到1厂。",
