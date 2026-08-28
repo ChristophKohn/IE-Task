@@ -1,34 +1,6 @@
 {
   "tasks": [
     {
-      "id": "puaeavgz",
-      "title": "Plates Brush for PL Goldpaint",
-      "description": "we will try new surfaces before painting",
-      "deadline": "2026-09-15",
-      "assignee": "Jula, Nikolaos",
-      "category": "Developing",
-      "status": "offen",
-      "createdAt": "2026-08-28T10:57:27.115Z",
-      "completedAt": null,
-      "subitems": [
-        {
-          "id": "roy2k3a4",
-          "text": "Brush the plates",
-          "done": false
-        },
-        {
-          "id": "eyc2aw3g",
-          "text": "Painting with gold 3 layer",
-          "done": false
-        },
-        {
-          "id": "3zbpv6ne",
-          "text": "Handover to Kohn",
-          "done": false
-        }
-      ]
-    },
-    {
       "id": "ybt1rdqf",
       "title": "Order Expander for Production",
       "description": "New Expander for Production needed in RTF. Packaging Tesla DZL",
@@ -489,7 +461,7 @@
         {
           "id": "y2jjq2kk",
           "text": "Different Brushing Test",
-          "done": false
+          "done": true
         },
         {
           "id": "y6gn0z67",
@@ -501,7 +473,8 @@
           "text": "Discussing with Kohn and Sirrenberg",
           "done": false
         }
-      ]
+      ],
+      "confirmedAt": null
     },
     {
       "id": "da9qtsvu",
