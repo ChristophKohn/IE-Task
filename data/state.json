@@ -1,6 +1,18 @@
 {
   "tasks": [
     {
+      "id": "x6qdqlk2",
+      "title": "Gitterschnitt an Test 1.1 - 1.4",
+      "description": "Einen Gitterschnitt an beiden Enden ausführen pro Bauteil",
+      "deadline": "2026-08-31",
+      "assignee": "Maas, Eduard",
+      "category": "IE Task",
+      "status": "offen",
+      "createdAt": "2026-08-28T12:24:15.989Z",
+      "completedAt": null,
+      "subitems": []
+    },
+    {
       "id": "ll7jok0z",
       "title": "Nusshaer anrufen",
       "description": "Herr Nusshaer anrufen bezüglich den Abschnitten und dem EDX",
