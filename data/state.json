@@ -37,14 +37,15 @@
         {
           "id": "0vwwawdn",
           "text": "Analysis of 3 Parts intern",
-          "done": false
+          "done": true
         },
         {
           "id": "q99qd5l5",
           "text": "Analysis of 1 part",
           "done": false
         }
-      ]
+      ],
+      "confirmedAt": null
     },
     {
       "id": "73o0jr35",
