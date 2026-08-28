@@ -1,6 +1,39 @@
 {
   "tasks": [
     {
+      "id": "9zg1orf0",
+      "title": "C174 Tests durchführen",
+      "description": "Das Bauteil C174 DZL müssen mehrere Tests durchgeführt werden",
+      "deadline": "2026-09-01",
+      "assignee": "Maas, Eduard",
+      "category": "IE Task",
+      "status": "offen",
+      "createdAt": "2026-08-28T12:26:15.794Z",
+      "completedAt": null,
+      "subitems": [
+        {
+          "id": "vo0stjob",
+          "text": "Fotos Bauteil vor abziehen nach abziehen",
+          "done": false
+        },
+        {
+          "id": "w8ou5i7w",
+          "text": "Kratztest hinten",
+          "done": false
+        },
+        {
+          "id": "m33mqofm",
+          "text": "Mikroskop Oberfläche überprüfen",
+          "done": false
+        },
+        {
+          "id": "hg7x5vsr",
+          "text": "Schichtdicke Bauteil messen",
+          "done": false
+        }
+      ]
+    },
+    {
       "id": "x6qdqlk2",
       "title": "Gitterschnitt an Test 1.1 - 1.4",
       "description": "Einen Gitterschnitt an beiden Enden ausführen pro Bauteil",
