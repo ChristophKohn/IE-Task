@@ -377,9 +377,9 @@
       "deadline": "2026-09-08",
       "assignee": "Kohn, Christoph",
       "category": "IE Task",
-      "status": "pruefung",
+      "status": "offen",
       "createdAt": "2026-08-21T16:08:54.965Z",
-      "completedAt": "2026-08-28T09:37:53.545Z",
+      "completedAt": null,
       "subitems": []
     },
     {
@@ -1092,10 +1092,10 @@
       "deadline": "2026-08-25",
       "assignee": "Zhao, Dongyuan",
       "category": "Management",
-      "status": "pruefung",
+      "status": "erledigt",
       "createdAt": "2026-08-10T14:29:41.353Z",
       "completedAt": "2026-08-28T07:07:21.492Z",
-      "confirmedAt": null,
+      "confirmedAt": "2026-08-28T09:37:40.125Z",
       "subitems": []
     },
     {
@@ -1261,9 +1261,9 @@
       "deadline": "2026-08-21",
       "assignee": "Geiger, Karl",
       "category": "Management",
-      "status": "offen",
+      "status": "pruefung",
       "createdAt": "2026-08-06T07:45:32.358Z",
-      "completedAt": null,
+      "completedAt": "2026-08-28T05:46:47.792Z",
       "confirmedAt": null,
       "subitems": []
     },
@@ -1729,9 +1729,9 @@
       "deadline": "2026-08-18",
       "assignee": "Kohn, Christoph",
       "category": "Government",
-      "status": "offen",
+      "status": "pruefung",
       "createdAt": "2026-08-04T15:41:10.999Z",
-      "completedAt": null,
+      "completedAt": "2026-08-28T09:37:57.822Z",
       "confirmedAt": null,
       "subitems": []
     },
