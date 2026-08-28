@@ -1039,7 +1039,7 @@
       "deadline": "2026-08-28",
       "assignee": "Jula, Nikolaos",
       "category": "EHS Task",
-      "status": "erledigt",
+      "status": "pruefung",
       "createdAt": "2026-08-12T09:34:01.135Z",
       "completedAt": "2026-08-28T12:21:22.155Z",
       "subitems": [
@@ -1064,7 +1064,7 @@
           "done": true
         }
       ],
-      "confirmedAt": "2026-08-28T18:12:08.236Z"
+      "confirmedAt": null
     },
     {
       "id": "6me3gjg8",
@@ -1914,7 +1914,7 @@
       "name": "Zhao, Dongyuan",
       "department": "IE",
       "personalnummer": "99040",
-      "admin": false
+      "admin": true
     },
     {
       "name": "Baiya, Lu",
