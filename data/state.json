@@ -854,7 +854,7 @@
         {
           "id": "h3i57h8r",
           "text": "Check possibility",
-          "done": false
+          "done": true
         },
         {
           "id": "hloe0fuh",
@@ -866,7 +866,8 @@
           "text": "integration in Line",
           "done": false
         }
-      ]
+      ],
+      "confirmedAt": null
     },
     {
       "id": "ssziwear",
