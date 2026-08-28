@@ -949,14 +949,14 @@
       "deadline": "2026-08-28",
       "assignee": "Jula, Nikolaos",
       "category": "EHS Task",
-      "status": "pruefung",
+      "status": "offen",
       "createdAt": "2026-08-12T09:34:01.135Z",
-      "completedAt": "2026-08-28T12:19:16.263Z",
+      "completedAt": null,
       "subitems": [
         {
           "id": "4xv1eutd",
           "text": "Talk with Siemens Posibilities",
-          "done": true
+          "done": false
         },
         {
           "id": "w8hx5mze",
