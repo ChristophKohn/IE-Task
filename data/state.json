@@ -1091,9 +1091,9 @@
       "deadline": "2026-08-25",
       "assignee": "Zhao, Dongyuan",
       "category": "Management",
-      "status": "pruefung",
+      "status": "offen",
       "createdAt": "2026-08-10T14:29:41.353Z",
-      "completedAt": "2026-08-28T07:06:37.017Z",
+      "completedAt": null,
       "confirmedAt": null,
       "subitems": []
     },
@@ -1715,9 +1715,9 @@
       "deadline": "2026-08-07",
       "assignee": "Zhao, Dongyuan",
       "category": "Management",
-      "status": "offen",
+      "status": "pruefung",
       "createdAt": "2026-08-04T15:41:48.259Z",
-      "completedAt": null,
+      "completedAt": "2026-08-28T07:06:44.613Z",
       "confirmedAt": null,
       "subitems": []
     },
