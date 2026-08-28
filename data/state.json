@@ -1,6 +1,18 @@
 {
   "tasks": [
     {
+      "id": "0opr454w",
+      "title": "Abfallöl-Sammelbehälter und Aufbewahrungsort 废油收集容器及存放位置",
+      "description": "Das Dokument legt eindeutig fest, welche Behälter für die Rückgewinnung von Altöl verwendet werden sollen und wo diese Behälter aufzubewahren sind. Vor der Schulung wird der Leiter der Vorbehandlungsabteilung geschult. Der Abteilungsleiter führt anschließend eine Weiterschulung für die Schichtmeister und die Hauptwarte (bzw. die Bediener der Hauptkontrollwarte) durch.\n文件明确费油回收用哪种容器，容器存放地点，组织培训前处理车间主任，车间主任给班长及主控转训。",
+      "deadline": "2026-09-04",
+      "assignee": "Geiger, Karl",
+      "category": "IE Task",
+      "status": "offen",
+      "createdAt": "2026-08-28T21:01:26.193Z",
+      "completedAt": null,
+      "subitems": []
+    },
+    {
       "id": "50yb9m8z",
       "title": "C174 Parts elox and Paint",
       "description": "The Part need to do more Tests for again Process in Elox and Paint",
