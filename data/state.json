@@ -316,12 +316,12 @@
         {
           "id": "n4nqomv5",
           "text": "Start Rack",
-          "done": false
+          "done": true
         },
         {
           "id": "ivze0mft",
           "text": "Evaluation from Test",
-          "done": true
+          "done": false
         }
       ],
       "confirmedAt": null
