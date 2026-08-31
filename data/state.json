@@ -299,9 +299,9 @@
       "deadline": "2026-08-27",
       "assignee": "Yurtyapan, Ilker",
       "category": "IE Task",
-      "status": "offen",
+      "status": "pruefung",
       "createdAt": "2026-08-25T13:58:45.018Z",
-      "completedAt": null,
+      "completedAt": "2026-08-31T06:00:35.075Z",
       "subitems": [
         {
           "id": "lqxxt1bl",
@@ -316,12 +316,12 @@
         {
           "id": "n4nqomv5",
           "text": "Start Rack",
-          "done": false
+          "done": true
         },
         {
           "id": "ivze0mft",
           "text": "Evaluation from Test",
-          "done": false
+          "done": true
         }
       ],
       "confirmedAt": null
