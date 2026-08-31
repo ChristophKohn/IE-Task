@@ -237,14 +237,14 @@
       "deadline": "2026-08-27",
       "assignee": "Yurtyapan, Ilker",
       "category": "IE Task",
-      "status": "offen",
+      "status": "pruefung",
       "createdAt": "2026-08-25T14:02:12.136Z",
-      "completedAt": null,
+      "completedAt": "2026-08-31T06:01:57.400Z",
       "subitems": [
         {
           "id": "f8s7guky",
           "text": "Prepare Parts",
-          "done": false
+          "done": true
         },
         {
           "id": "71tl3cmd",
@@ -254,7 +254,7 @@
         {
           "id": "9zp51dm1",
           "text": "Evaluation about Test",
-          "done": false
+          "done": true
         }
       ],
       "confirmedAt": null
