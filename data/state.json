@@ -237,14 +237,14 @@
       "deadline": "2026-08-27",
       "assignee": "Yurtyapan, Ilker",
       "category": "IE Task",
-      "status": "pruefung",
+      "status": "offen",
       "createdAt": "2026-08-25T14:02:12.136Z",
-      "completedAt": "2026-08-31T06:01:57.400Z",
+      "completedAt": null,
       "subitems": [
         {
           "id": "f8s7guky",
           "text": "Prepare Parts",
-          "done": true
+          "done": false
         },
         {
           "id": "71tl3cmd",
@@ -542,9 +542,9 @@
       "deadline": "2026-08-21",
       "assignee": "Yurtyapan, Ilker",
       "category": "IE Task",
-      "status": "offen",
+      "status": "pruefung",
       "createdAt": "2026-08-21T09:21:34.273Z",
-      "completedAt": null,
+      "completedAt": "2026-08-31T06:02:03.062Z",
       "subitems": [
         {
           "id": "k60s5tko",
@@ -559,7 +559,7 @@
         {
           "id": "f0l648ws",
           "text": "Standard without de-greasing",
-          "done": false
+          "done": true
         }
       ],
       "confirmedAt": null
