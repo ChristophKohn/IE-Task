@@ -311,12 +311,12 @@
         {
           "id": "co25s4y9",
           "text": "Prepare Parts",
-          "done": true
+          "done": false
         },
         {
           "id": "n4nqomv5",
           "text": "Start Rack",
-          "done": false
+          "done": true
         },
         {
           "id": "ivze0mft",
