@@ -244,7 +244,7 @@
         {
           "id": "f8s7guky",
           "text": "Prepare Parts",
-          "done": false
+          "done": true
         },
         {
           "id": "71tl3cmd",
@@ -254,7 +254,7 @@
         {
           "id": "9zp51dm1",
           "text": "Evaluation about Test",
-          "done": true
+          "done": false
         }
       ],
       "confirmedAt": null
