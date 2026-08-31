@@ -540,9 +540,9 @@
       "deadline": "2026-08-21",
       "assignee": "Yurtyapan, Ilker",
       "category": "IE Task",
-      "status": "offen",
+      "status": "pruefung",
       "createdAt": "2026-08-21T09:21:34.273Z",
-      "completedAt": null,
+      "completedAt": "2026-08-31T05:59:50.273Z",
       "subitems": [
         {
           "id": "k60s5tko",
@@ -557,7 +557,7 @@
         {
           "id": "f0l648ws",
           "text": "Standard without de-greasing",
-          "done": false
+          "done": true
         }
       ],
       "confirmedAt": null
