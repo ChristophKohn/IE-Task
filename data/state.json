@@ -244,12 +244,12 @@
         {
           "id": "f8s7guky",
           "text": "Prepare Parts",
-          "done": false
+          "done": true
         },
         {
           "id": "71tl3cmd",
           "text": "Stop the TW and put the parts on the rack before Anodizing",
-          "done": true
+          "done": false
         },
         {
           "id": "9zp51dm1",
