@@ -249,14 +249,15 @@
         {
           "id": "71tl3cmd",
           "text": "Stop the TW and put the parts on the rack before Anodizing",
-          "done": false
+          "done": true
         },
         {
           "id": "9zp51dm1",
           "text": "Evaluation about Test",
           "done": false
         }
-      ]
+      ],
+      "confirmedAt": null
     },
     {
       "id": "go2var9e",
