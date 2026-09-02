@@ -50,7 +50,7 @@
         {
           "id": "x4x9h4mm",
           "text": "cut part in 2 pieces",
-          "done": false
+          "done": true
         },
         {
           "id": "iuksco8y",
@@ -67,7 +67,8 @@
           "text": "Evaluation about Tests",
           "done": false
         }
-      ]
+      ],
+      "confirmedAt": null
     },
     {
       "id": "9zg1orf0",
