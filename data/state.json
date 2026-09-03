@@ -43,9 +43,9 @@
       "deadline": "2026-09-01",
       "assignee": "Yurtyapan, Ilker",
       "category": "IE Task",
-      "status": "offen",
+      "status": "pruefung",
       "createdAt": "2026-08-28T12:29:39.681Z",
-      "completedAt": null,
+      "completedAt": "2026-09-03T10:56:34.301Z",
       "subitems": [
         {
           "id": "x4x9h4mm",
@@ -65,7 +65,7 @@
         {
           "id": "u5orgxg2",
           "text": "Evaluation about Tests",
-          "done": false
+          "done": true
         }
       ],
       "confirmedAt": null
