@@ -157,9 +157,9 @@
       "deadline": "2026-09-04",
       "assignee": "Jula, Nikolaos",
       "category": "IE Task",
-      "status": "offen",
+      "status": "pruefung",
       "createdAt": "2026-08-25T14:13:43.948Z",
-      "completedAt": null,
+      "completedAt": "2026-09-08T07:59:20.607Z",
       "subitems": [
         {
           "id": "0vwwawdn",
@@ -169,7 +169,7 @@
         {
           "id": "q99qd5l5",
           "text": "Analysis of 1 part",
-          "done": false
+          "done": true
         }
       ],
       "confirmedAt": null
