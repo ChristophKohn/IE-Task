@@ -157,9 +157,9 @@
       "deadline": "2026-09-04",
       "assignee": "Jula, Nikolaos",
       "category": "IE Task",
-      "status": "offen",
+      "status": "pruefung",
       "createdAt": "2026-08-25T14:13:43.948Z",
-      "completedAt": null,
+      "completedAt": "2026-09-08T07:59:20.607Z",
       "subitems": [
         {
           "id": "0vwwawdn",
@@ -169,7 +169,7 @@
         {
           "id": "q99qd5l5",
           "text": "Analysis of 1 part",
-          "done": false
+          "done": true
         }
       ],
       "confirmedAt": null
@@ -585,9 +585,9 @@
       "deadline": "2026-08-28",
       "assignee": "Jula, Nikolaos",
       "category": "Developing",
-      "status": "offen",
+      "status": "pruefung",
       "createdAt": "2026-08-20T09:23:30.101Z",
-      "completedAt": null,
+      "completedAt": "2026-09-08T07:59:50.801Z",
       "subitems": [
         {
           "id": "y2jjq2kk",
@@ -602,7 +602,7 @@
         {
           "id": "qtrxdhsn",
           "text": "Discussing with Kohn and Sirrenberg",
-          "done": false
+          "done": true
         }
       ],
       "confirmedAt": null
@@ -1754,9 +1754,9 @@
       "deadline": "2026-08-14",
       "assignee": "Jula, Nikolaos",
       "category": "Developing",
-      "status": "pruefung",
+      "status": "offen",
       "createdAt": "2026-08-05T06:50:25.649Z",
-      "completedAt": "2026-09-08T07:59:40.691Z",
+      "completedAt": null,
       "confirmedAt": null,
       "subitems": []
     },
