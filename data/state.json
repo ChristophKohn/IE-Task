@@ -645,12 +645,12 @@
         {
           "id": "r6wytrgw",
           "text": "Check Temperature is correct or not",
-          "done": true
+          "done": false
         },
         {
           "id": "hxrgh7r9",
           "text": "Different Temperature test and test hardness",
-          "done": false
+          "done": true
         }
       ],
       "confirmedAt": null
