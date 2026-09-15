@@ -141,12 +141,12 @@
         {
           "id": "jlkx15h1",
           "text": "Create PR and Push",
-          "done": true
+          "done": false
         },
         {
           "id": "d71p7h0d",
           "text": "Handover to Pengwei",
-          "done": false
+          "done": true
         }
       ],
       "confirmedAt": null
