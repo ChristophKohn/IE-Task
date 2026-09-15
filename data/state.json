@@ -1,6 +1,18 @@
 {
   "tasks": [
     {
+      "id": "mzj7d1r0",
+      "title": "Assambly Table Risk for Scratch",
+      "description": "End of inspection line for DZL the Table need to be improved. Dirty and risk for scratches",
+      "deadline": "2026-09-18",
+      "assignee": "Song, Wanxin",
+      "category": "IE Task",
+      "status": "offen",
+      "createdAt": "2026-09-15T15:23:05.214Z",
+      "completedAt": null,
+      "subitems": []
+    },
+    {
       "id": "d5ou78e0",
       "title": "Increase Efficency Assambly",
       "description": "DZL checking area not very efficent. Check possible improvement",
