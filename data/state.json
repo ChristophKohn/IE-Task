@@ -328,7 +328,7 @@
         {
           "id": "hlmpcbqd",
           "text": "Prepare Parts",
-          "done": true
+          "done": false
         },
         {
           "id": "2ngzadsx",
@@ -338,7 +338,7 @@
         {
           "id": "pzkhssic",
           "text": "Evaluation about Test",
-          "done": false
+          "done": true
         }
       ],
       "confirmedAt": null
