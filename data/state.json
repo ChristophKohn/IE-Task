@@ -1,6 +1,18 @@
 {
   "tasks": [
     {
+      "id": "kpbrfo3o",
+      "title": "Working Instruction Assambly",
+      "description": "In Assambly employees wearing jewelery and so on. Need to be stopped for demaging parts",
+      "deadline": "2026-09-18",
+      "assignee": "Song, Wanxin",
+      "category": "IE Task",
+      "status": "offen",
+      "createdAt": "2026-09-15T15:21:27.488Z",
+      "completedAt": null,
+      "subitems": []
+    },
+    {
       "id": "5m8bksqv",
       "title": "Lagerung neuer GT 新的GT存放",
       "description": "Neue GT sind in den Innenbereich zu verbringen und an einem dafür vorgesehenen Platz zu lagern. Das willkürliche Abstellen im Freien ist untersagt.\n新GT拉回室内，找专用位置存放，禁止随意放置在室外。",
