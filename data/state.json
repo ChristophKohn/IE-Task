@@ -323,7 +323,7 @@
         {
           "id": "xldbh1lu",
           "text": "Prepare Program",
-          "done": true
+          "done": false
         },
         {
           "id": "hlmpcbqd",
@@ -338,7 +338,7 @@
         {
           "id": "pzkhssic",
           "text": "Evaluation about Test",
-          "done": false
+          "done": true
         }
       ],
       "confirmedAt": null
