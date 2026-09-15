@@ -328,12 +328,12 @@
         {
           "id": "hlmpcbqd",
           "text": "Prepare Parts",
-          "done": true
+          "done": false
         },
         {
           "id": "2ngzadsx",
           "text": "Start Test on Anod 3",
-          "done": false
+          "done": true
         },
         {
           "id": "pzkhssic",
