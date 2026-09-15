@@ -323,7 +323,7 @@
         {
           "id": "xldbh1lu",
           "text": "Prepare Program",
-          "done": false
+          "done": true
         },
         {
           "id": "hlmpcbqd",
@@ -333,7 +333,7 @@
         {
           "id": "2ngzadsx",
           "text": "Start Test on Anod 3",
-          "done": false
+          "done": true
         },
         {
           "id": "pzkhssic",
