@@ -134,19 +134,19 @@
       "deadline": "2026-09-15",
       "assignee": "Geiger, Karl",
       "category": "IE Task",
-      "status": "offen",
+      "status": "pruefung",
       "createdAt": "2026-08-28T10:53:18.237Z",
-      "completedAt": null,
+      "completedAt": "2026-09-15T13:10:33.252Z",
       "subitems": [
         {
           "id": "jlkx15h1",
           "text": "Create PR and Push",
-          "done": false
+          "done": true
         },
         {
           "id": "d71p7h0d",
           "text": "Handover to Pengwei",
-          "done": false
+          "done": true
         }
       ],
       "confirmedAt": null
