@@ -1,6 +1,18 @@
 {
   "tasks": [
     {
+      "id": "d5ou78e0",
+      "title": "Increase Efficency Assambly",
+      "description": "DZL checking area not very efficent. Check possible improvement",
+      "deadline": "2026-09-18",
+      "assignee": "Song, Wanxin",
+      "category": "IE Task",
+      "status": "offen",
+      "createdAt": "2026-09-15T15:22:16.892Z",
+      "completedAt": null,
+      "subitems": []
+    },
+    {
       "id": "kpbrfo3o",
       "title": "Working Instruction Assambly",
       "description": "In Assambly employees wearing jewelery and so on. Need to be stopped for demaging parts",
