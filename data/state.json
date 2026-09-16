@@ -156,7 +156,7 @@
         {
           "id": "vo0stjob",
           "text": "Fotos Bauteil vor abziehen nach abziehen",
-          "done": false
+          "done": true
         },
         {
           "id": "w8ou5i7w",
@@ -173,7 +173,8 @@
           "text": "Schichtdicke Bauteil messen",
           "done": false
         }
-      ]
+      ],
+      "confirmedAt": null
     },
     {
       "id": "x6qdqlk2",
