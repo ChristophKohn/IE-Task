@@ -166,12 +166,12 @@
         {
           "id": "m33mqofm",
           "text": "Mikroskop Oberfläche überprüfen",
-          "done": true
+          "done": false
         },
         {
           "id": "hg7x5vsr",
           "text": "Schichtdicke Bauteil messen",
-          "done": false
+          "done": true
         }
       ],
       "confirmedAt": null
