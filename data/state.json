@@ -161,12 +161,12 @@
         {
           "id": "w8ou5i7w",
           "text": "Kratztest hinten",
-          "done": true
+          "done": false
         },
         {
           "id": "m33mqofm",
           "text": "Mikroskop Oberfläche überprüfen",
-          "done": false
+          "done": true
         },
         {
           "id": "hg7x5vsr",
