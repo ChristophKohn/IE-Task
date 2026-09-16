@@ -156,12 +156,12 @@
         {
           "id": "vo0stjob",
           "text": "Fotos Bauteil vor abziehen nach abziehen",
-          "done": true
+          "done": false
         },
         {
           "id": "w8ou5i7w",
           "text": "Kratztest hinten",
-          "done": false
+          "done": true
         },
         {
           "id": "m33mqofm",
