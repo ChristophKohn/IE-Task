@@ -340,19 +340,19 @@
       "deadline": "2026-08-27",
       "assignee": "Zhao, Dongyuan",
       "category": "IE Task",
-      "status": "offen",
+      "status": "pruefung",
       "createdAt": "2026-08-25T13:59:54.134Z",
-      "completedAt": null,
+      "completedAt": "2026-09-16T11:30:19.090Z",
       "subitems": [
         {
           "id": "xldbh1lu",
           "text": "Prepare Program",
-          "done": false
+          "done": true
         },
         {
           "id": "hlmpcbqd",
           "text": "Prepare Parts",
-          "done": false
+          "done": true
         },
         {
           "id": "2ngzadsx",
