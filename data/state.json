@@ -1,6 +1,18 @@
 {
   "tasks": [
     {
+      "id": "mkm1icwk",
+      "title": "Tesla CombiTest",
+      "description": "Tesla Peel Off Test",
+      "deadline": "2026-09-18",
+      "assignee": "Jula, Nikolaos",
+      "category": "IE Task",
+      "status": "offen",
+      "createdAt": "2026-09-16T07:20:40.438Z",
+      "completedAt": null,
+      "subitems": []
+    },
+    {
       "id": "9hr9i19t",
       "title": "Marking Defect Parts",
       "description": "Production is doing marking on A Surface. Not allowed. Check WI and training to employee",
