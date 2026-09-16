@@ -2085,6 +2085,13 @@
       "department": "",
       "personalnummer": "111111",
       "viewOnly": true
+    },
+    {
+      "name": "Gürel, Ercüment Sakir",
+      "department": "IE",
+      "personalnummer": "21896",
+      "admin": false,
+      "viewOnly": false
     }
   ]
 }
