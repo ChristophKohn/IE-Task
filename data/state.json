@@ -149,14 +149,14 @@
       "deadline": "2026-09-01",
       "assignee": "Maas, Eduard",
       "category": "IE Task",
-      "status": "offen",
+      "status": "pruefung",
       "createdAt": "2026-08-28T12:26:15.794Z",
-      "completedAt": null,
+      "completedAt": "2026-09-16T12:34:29.492Z",
       "subitems": [
         {
           "id": "vo0stjob",
           "text": "Fotos Bauteil vor abziehen nach abziehen",
-          "done": false
+          "done": true
         },
         {
           "id": "w8ou5i7w",
