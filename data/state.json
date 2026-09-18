@@ -128,7 +128,7 @@
       "deadline": "2026-09-01",
       "assignee": "Yurtyapan, Ilker",
       "category": "IE Task",
-      "status": "erledigt",
+      "status": "pruefung",
       "createdAt": "2026-08-28T12:29:39.681Z",
       "completedAt": "2026-09-03T10:56:34.301Z",
       "subitems": [
@@ -153,7 +153,7 @@
           "done": true
         }
       ],
-      "confirmedAt": "2026-09-18T11:30:15.878Z"
+      "confirmedAt": null
     },
     {
       "id": "9zg1orf0",
@@ -208,10 +208,11 @@
       "deadline": "2026-08-31",
       "assignee": "Maas, Eduard",
       "category": "IE Task",
-      "status": "pruefung",
+      "status": "erledigt",
       "createdAt": "2026-08-28T12:22:52.121Z",
       "completedAt": "2026-09-16T12:33:50.500Z",
-      "subitems": []
+      "subitems": [],
+      "confirmedAt": "2026-09-18T11:30:19.486Z"
     },
     {
       "id": "ybt1rdqf",
