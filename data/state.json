@@ -91,10 +91,11 @@
       "deadline": "2026-09-01",
       "assignee": "Yurtyapan, Ilker",
       "category": "IE Task",
-      "status": "pruefung",
+      "status": "erledigt",
       "createdAt": "2026-08-28T21:08:32.727Z",
       "completedAt": "2026-08-31T06:03:02.381Z",
-      "subitems": []
+      "subitems": [],
+      "confirmedAt": "2026-09-18T11:29:55.334Z"
     },
     {
       "id": "d3a0z7b1",
@@ -103,11 +104,10 @@
       "deadline": "2026-09-02",
       "assignee": "Song, Wanxin",
       "category": "IE Task",
-      "status": "erledigt",
+      "status": "pruefung",
       "createdAt": "2026-08-28T21:05:48.769Z",
       "completedAt": "2026-09-15T14:59:46.873Z",
-      "subitems": [],
-      "confirmedAt": "2026-09-18T11:29:50.704Z"
+      "subitems": []
     },
     {
       "id": "0opr454w",
