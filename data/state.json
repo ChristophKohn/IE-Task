@@ -197,10 +197,11 @@
       "deadline": "2026-08-31",
       "assignee": "Maas, Eduard",
       "category": "IE Task",
-      "status": "pruefung",
+      "status": "erledigt",
       "createdAt": "2026-08-28T12:24:15.989Z",
       "completedAt": "2026-09-16T12:33:10.465Z",
-      "subitems": []
+      "subitems": [],
+      "confirmedAt": "2026-09-18T12:42:11.980Z"
     },
     {
       "id": "ll7jok0z",
