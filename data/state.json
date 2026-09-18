@@ -43,9 +43,9 @@
       "deadline": "2026-09-16",
       "assignee": "Song, Wanxin",
       "category": "IE Task",
-      "status": "offen",
+      "status": "pruefung",
       "createdAt": "2026-09-15T15:23:46.798Z",
-      "completedAt": null,
+      "completedAt": "2026-09-18T15:03:15.905Z",
       "subitems": []
     },
     {
@@ -55,9 +55,9 @@
       "deadline": "2026-09-18",
       "assignee": "Song, Wanxin",
       "category": "IE Task",
-      "status": "pruefung",
+      "status": "offen",
       "createdAt": "2026-09-15T15:23:05.214Z",
-      "completedAt": "2026-09-18T15:03:10.037Z",
+      "completedAt": null,
       "subitems": []
     },
     {
