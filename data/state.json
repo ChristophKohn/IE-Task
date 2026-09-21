@@ -1680,10 +1680,10 @@
       "deadline": "2026-08-27",
       "assignee": "Geiger, Karl",
       "category": "IE Task",
-      "status": "pruefung",
+      "status": "erledigt",
       "createdAt": "2026-08-05T14:24:14.970Z",
       "completedAt": "2026-09-15T13:02:25.248Z",
-      "confirmedAt": null,
+      "confirmedAt": "2026-09-21T13:45:22.058Z",
       "subitems": []
     },
     {
