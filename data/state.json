@@ -576,7 +576,7 @@
         {
           "id": "4yaf543r",
           "text": "Empty Mud Tank",
-          "done": false
+          "done": true
         },
         {
           "id": "40ey3zrt",
@@ -593,7 +593,8 @@
           "text": "Send to Mr. Kohn for decision",
           "done": false
         }
-      ]
+      ],
+      "confirmedAt": null
     },
     {
       "id": "rw3dk9b6",
