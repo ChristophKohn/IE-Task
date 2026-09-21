@@ -610,12 +610,12 @@
         {
           "id": "ka65st21",
           "text": "Disassamble needed material",
-          "done": false
+          "done": true
         },
         {
           "id": "s2hou2qp",
           "text": "Prepare for transport",
-          "done": true
+          "done": false
         }
       ],
       "confirmedAt": null
