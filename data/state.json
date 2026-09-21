@@ -1174,7 +1174,7 @@
       "deadline": "2026-08-28",
       "assignee": "Jula, Nikolaos",
       "category": "EHS Task",
-      "status": "pruefung",
+      "status": "erledigt",
       "createdAt": "2026-08-12T09:34:01.135Z",
       "completedAt": "2026-08-28T12:21:22.155Z",
       "subitems": [
@@ -1199,7 +1199,7 @@
           "done": true
         }
       ],
-      "confirmedAt": null
+      "confirmedAt": "2026-09-21T11:40:30.262Z"
     },
     {
       "id": "6me3gjg8",
