@@ -1,6 +1,18 @@
 {
   "tasks": [
     {
+      "id": "a0e6buvf",
+      "title": "Shelf for Coloured Plates",
+      "description": "",
+      "deadline": "2026-09-24",
+      "assignee": "Jula, Nikolaos",
+      "category": "New Business",
+      "status": "offen",
+      "createdAt": "2026-09-22T05:39:41.670Z",
+      "completedAt": null,
+      "subitems": []
+    },
+    {
       "id": "x5hyt4kr",
       "title": "Concept automatic Assambly",
       "description": "Create a Plan in our current layout for automatic checking and assambly line in M1",
