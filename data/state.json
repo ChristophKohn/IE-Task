@@ -1,6 +1,34 @@
 {
   "tasks": [
     {
+      "id": "pqeg5suj",
+      "title": "Q7 RFQ for Storage Rails",
+      "description": "We get possibility to check the system",
+      "deadline": "2026-09-24",
+      "assignee": "Kohn, Christoph",
+      "category": "New Business",
+      "status": "offen",
+      "createdAt": "2026-09-22T05:42:38.019Z",
+      "completedAt": null,
+      "subitems": [
+        {
+          "id": "aw01ztgs",
+          "text": "Check technical requirements",
+          "done": false
+        },
+        {
+          "id": "zoya1jgt",
+          "text": "calculate rack and price",
+          "done": false
+        },
+        {
+          "id": "ohsi2t2j",
+          "text": "offer to customer",
+          "done": false
+        }
+      ]
+    },
+    {
       "id": "61gt5oio",
       "title": "Move Folder to new office",
       "description": "Move all goverment documents to new office",
