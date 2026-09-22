@@ -1,6 +1,18 @@
 {
   "tasks": [
     {
+      "id": "x5hyt4kr",
+      "title": "Concept automatic Assambly",
+      "description": "Create a Plan in our current layout for automatic checking and assambly line in M1",
+      "deadline": "2026-09-29",
+      "assignee": "Gürel, Ercüment Sakir",
+      "category": "Developing",
+      "status": "offen",
+      "createdAt": "2026-09-22T05:38:55.528Z",
+      "completedAt": null,
+      "subitems": []
+    },
+    {
       "id": "nnfkke8l",
       "title": "Design for new Roof Rail system",
       "description": "New roof rail concept with weight sensor",
