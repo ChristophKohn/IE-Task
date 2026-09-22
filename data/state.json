@@ -1,6 +1,24 @@
 {
   "tasks": [
     {
+      "id": "nnfkke8l",
+      "title": "Design for new Roof Rail system",
+      "description": "New roof rail concept with weight sensor",
+      "deadline": "2026-09-29",
+      "assignee": "Jula, Nikolaos",
+      "category": "Developing",
+      "status": "offen",
+      "createdAt": "2026-09-22T05:38:04.432Z",
+      "completedAt": null,
+      "subitems": [
+        {
+          "id": "efcww6pv",
+          "text": "Create Concept Idea",
+          "done": false
+        }
+      ]
+    },
+    {
       "id": "5s8ogwfw",
       "title": "Sample Parts new Bolt",
       "description": "Send documents to Mehler Group Mr. Meier for checking and offer",
