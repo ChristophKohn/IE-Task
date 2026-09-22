@@ -756,9 +756,9 @@
       "deadline": "2026-08-21",
       "assignee": "Yurtyapan, Ilker",
       "category": "IE Task",
-      "status": "offen",
+      "status": "pruefung",
       "createdAt": "2026-08-21T09:21:34.273Z",
-      "completedAt": null,
+      "completedAt": "2026-09-22T06:07:04.078Z",
       "subitems": [
         {
           "id": "k60s5tko",
@@ -768,7 +768,7 @@
         {
           "id": "butte5xg",
           "text": "Standard + elektro Polishing 12min 30V",
-          "done": false
+          "done": true
         },
         {
           "id": "f0l648ws",
