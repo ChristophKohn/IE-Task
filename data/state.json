@@ -1,6 +1,18 @@
 {
   "tasks": [
     {
+      "id": "61gt5oio",
+      "title": "Move Folder to new office",
+      "description": "Move all goverment documents to new office",
+      "deadline": "2026-09-24",
+      "assignee": "Jula, Nikolaos",
+      "category": "Management",
+      "status": "offen",
+      "createdAt": "2026-09-22T05:40:28.023Z",
+      "completedAt": null,
+      "subitems": []
+    },
+    {
       "id": "a0e6buvf",
       "title": "Shelf for Coloured Plates",
       "description": "",
