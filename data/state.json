@@ -1,34 +1,24 @@
 {
   "tasks": [
     {
-      "id": "d4mtab2r",
-      "title": "Tehnical Documentation for Patent",
-      "description": "Create possible documentations for patent",
-      "deadline": "2026-10-09",
+      "id": "ojhuvczp",
+      "title": "Change BimschG document for Goverment",
+      "description": "Due to questions need to be answered and given to Goverment",
+      "deadline": "2026-09-25",
       "assignee": "Kohn, Christoph",
-      "category": "Management",
+      "category": "Government",
       "status": "offen",
-      "createdAt": "2026-09-24T13:08:09.293Z",
+      "createdAt": "2026-09-24T13:08:59.698Z",
       "completedAt": null,
       "subitems": [
         {
-          "id": "00zhx0ss",
-          "text": "Technical Document New Bolt",
+          "id": "43exgveb",
+          "text": "Change Documentations",
           "done": false
         },
         {
-          "id": "96tlh1vo",
-          "text": "Technical Document Roof Rail Painting",
-          "done": false
-        },
-        {
-          "id": "duatm5r4",
-          "text": "Technical Document automatic loading frame Anodizing",
-          "done": false
-        },
-        {
-          "id": "mxhxc1ek",
-          "text": "Technical Document Touchable Surface",
+          "id": "url4lq28",
+          "text": "Answer questions",
           "done": false
         }
       ]
