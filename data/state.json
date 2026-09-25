@@ -1186,12 +1186,12 @@
         {
           "id": "youd6kzn",
           "text": "Delivery 2 weeks",
-          "done": true
+          "done": false
         },
         {
           "id": "pg2ig2qt",
           "text": "First frame producing with Niko",
-          "done": true
+          "done": false
         },
         {
           "id": "226air58",
@@ -1683,9 +1683,9 @@
       "deadline": "2026-08-21",
       "assignee": "Geiger, Karl",
       "category": "Management",
-      "status": "offen",
+      "status": "pruefung",
       "createdAt": "2026-08-06T07:47:51.103Z",
-      "completedAt": null,
+      "completedAt": "2026-09-25T11:45:00.354Z",
       "confirmedAt": null,
       "subitems": []
     },
