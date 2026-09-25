@@ -184,12 +184,12 @@
         {
           "id": "kdwcho1h",
           "text": "Handover to Mr. Wagner",
-          "done": true
+          "done": false
         },
         {
           "id": "40db1gvh",
           "text": "Check results from Supplier",
-          "done": false
+          "done": true
         }
       ],
       "confirmedAt": null
