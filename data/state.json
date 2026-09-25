@@ -1,4 +1,97 @@
 {
   "tasks": [],
-  "team": []
+  "team": [
+    {
+      "name": "Kohn, Christoph",
+      "department": "IE",
+      "personalnummer": "99176",
+      "admin": true
+    },
+    {
+      "name": "Zhao, Dongyuan",
+      "department": "IE",
+      "personalnummer": "99040"
+    },
+    {
+      "name": "Baiya, Lu",
+      "department": "IE",
+      "personalnummer": "99054"
+    },
+    {
+      "name": "Lize, Cai",
+      "department": "IE",
+      "personalnummer": "21713"
+    },
+    {
+      "name": "Yurtyapan, Ilker",
+      "department": "IE",
+      "personalnummer": "21498"
+    },
+    {
+      "name": "Chen, Pengwei",
+      "department": "IE",
+      "personalnummer": "21886"
+    },
+    {
+      "name": "Maas, Eduard",
+      "department": "IE",
+      "personalnummer": "60208"
+    },
+    {
+      "name": "Song, Wanxin",
+      "department": "IE",
+      "personalnummer": "21840"
+    },
+    {
+      "name": "Geiger, Karl",
+      "department": "IE",
+      "personalnummer": "21770"
+    },
+    {
+      "name": "Jula, Nikolaos",
+      "department": "IE",
+      "personalnummer": "20900"
+    },
+    {
+      "name": "Rahnfeld, Eva",
+      "department": "Labor",
+      "personalnummer": "21327"
+    },
+    {
+      "name": "Rahnfeld, Hans-Georg",
+      "department": "Process Water",
+      "personalnummer": "60191"
+    },
+    {
+      "name": "Min, Hao",
+      "department": "Process Water",
+      "personalnummer": "21482"
+    },
+    {
+      "name": "Volodomyr, Saroz",
+      "department": "Process Water",
+      "personalnummer": "21278"
+    },
+    {
+      "name": "Ye, Lixu",
+      "department": "IE",
+      "personalnummer": "99198"
+    },
+    {
+      "name": "Taube, Vanessa",
+      "department": "Labor",
+      "personalnummer": "21811"
+    },
+    {
+      "name": "Daniels, Lea",
+      "department": "Labor",
+      "personalnummer": "21481"
+    },
+    {
+      "name": "Rui, Liu",
+      "department": "",
+      "personalnummer": "111111",
+      "viewOnly": true
+    }
+  ]
 }
