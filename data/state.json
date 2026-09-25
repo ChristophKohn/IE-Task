@@ -177,14 +177,14 @@
       "deadline": "2026-09-29",
       "assignee": "Yurtyapan, Ilker",
       "category": "IE Task",
-      "status": "offen",
+      "status": "pruefung",
       "createdAt": "2026-09-22T05:36:03.271Z",
-      "completedAt": null,
+      "completedAt": "2026-09-25T11:43:25.978Z",
       "subitems": [
         {
           "id": "kdwcho1h",
           "text": "Handover to Mr. Wagner",
-          "done": false
+          "done": true
         },
         {
           "id": "40db1gvh",
