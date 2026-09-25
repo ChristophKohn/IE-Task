@@ -1124,14 +1124,14 @@
       "deadline": "2026-08-28",
       "assignee": "Yurtyapan, Ilker",
       "category": "IE Task",
-      "status": "offen",
+      "status": "pruefung",
       "createdAt": "2026-08-18T08:46:55.869Z",
-      "completedAt": null,
+      "completedAt": "2026-09-25T11:44:08.859Z",
       "subitems": [
         {
           "id": "9bxnqltz",
           "text": "Transport to M1",
-          "done": false
+          "done": true
         },
         {
           "id": "ai030lv9",
@@ -1186,7 +1186,7 @@
         {
           "id": "youd6kzn",
           "text": "Delivery 2 weeks",
-          "done": true
+          "done": false
         },
         {
           "id": "pg2ig2qt",
@@ -1198,8 +1198,7 @@
           "text": "Clear timeline to finish all",
           "done": false
         }
-      ],
-      "confirmedAt": null
+      ]
     },
     {
       "id": "478qldoy",
@@ -1463,9 +1462,9 @@
       "deadline": "2026-08-13",
       "assignee": "Geiger, Karl",
       "category": "IE Task",
-      "status": "offen",
+      "status": "pruefung",
       "createdAt": "2026-08-12T08:33:01.314Z",
-      "completedAt": null,
+      "completedAt": "2026-09-25T11:44:26.427Z",
       "subitems": []
     },
     {
