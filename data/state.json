@@ -1186,12 +1186,12 @@
         {
           "id": "youd6kzn",
           "text": "Delivery 2 weeks",
-          "done": true
+          "done": false
         },
         {
           "id": "pg2ig2qt",
           "text": "First frame producing with Niko",
-          "done": false
+          "done": true
         },
         {
           "id": "226air58",
