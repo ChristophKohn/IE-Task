@@ -177,9 +177,9 @@
       "deadline": "2026-09-29",
       "assignee": "Yurtyapan, Ilker",
       "category": "IE Task",
-      "status": "pruefung",
+      "status": "offen",
       "createdAt": "2026-09-22T05:36:03.271Z",
-      "completedAt": "2026-09-25T11:43:02.218Z",
+      "completedAt": null,
       "subitems": [
         {
           "id": "kdwcho1h",
@@ -189,7 +189,7 @@
         {
           "id": "40db1gvh",
           "text": "Check results from Supplier",
-          "done": true
+          "done": false
         }
       ],
       "confirmedAt": null
