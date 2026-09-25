@@ -1124,19 +1124,19 @@
       "deadline": "2026-08-28",
       "assignee": "Yurtyapan, Ilker",
       "category": "IE Task",
-      "status": "offen",
+      "status": "pruefung",
       "createdAt": "2026-08-18T08:46:55.869Z",
-      "completedAt": null,
+      "completedAt": "2026-09-25T11:44:08.859Z",
       "subitems": [
         {
           "id": "9bxnqltz",
           "text": "Transport to M1",
-          "done": false
+          "done": true
         },
         {
           "id": "ai030lv9",
           "text": "Handover to Jiawei",
-          "done": false
+          "done": true
         },
         {
           "id": "09jh4lc6",
