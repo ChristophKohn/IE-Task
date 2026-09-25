@@ -1,6 +1,34 @@
 {
   "tasks": [
     {
+      "id": "gu82dxyx",
+      "title": "Q7 Kofferraumleisten",
+      "description": "Calculation Rack",
+      "deadline": "2026-09-28",
+      "assignee": "Yurtyapan, Ilker",
+      "category": "New Business",
+      "status": "offen",
+      "createdAt": "2026-09-25T07:30:41.310Z",
+      "completedAt": null,
+      "subitems": [
+        {
+          "id": "jyeeyiu2",
+          "text": "Calculate amount per Rack",
+          "done": false
+        },
+        {
+          "id": "94f9lwkc",
+          "text": "Cost per Rack",
+          "done": false
+        },
+        {
+          "id": "yhudi1b0",
+          "text": "5000 parts per Week. Amount of Racks",
+          "done": false
+        }
+      ]
+    },
+    {
       "id": "xi2l1cf9",
       "title": "Titan Difference",
       "description": "Difference in Titanium from China and Germany",
