@@ -1131,12 +1131,12 @@
         {
           "id": "9bxnqltz",
           "text": "Transport to M1",
-          "done": true
+          "done": false
         },
         {
           "id": "ai030lv9",
           "text": "Handover to Jiawei",
-          "done": false
+          "done": true
         },
         {
           "id": "09jh4lc6",
