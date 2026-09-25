@@ -14,7 +14,7 @@
         {
           "id": "jyeeyiu2",
           "text": "Calculate amount per Rack",
-          "done": false
+          "done": true
         },
         {
           "id": "94f9lwkc",
@@ -26,7 +26,8 @@
           "text": "5000 parts per Week. Amount of Racks",
           "done": false
         }
-      ]
+      ],
+      "confirmedAt": null
     },
     {
       "id": "xi2l1cf9",
