@@ -1131,7 +1131,7 @@
         {
           "id": "9bxnqltz",
           "text": "Transport to M1",
-          "done": false
+          "done": true
         },
         {
           "id": "ai030lv9",
@@ -1141,7 +1141,7 @@
         {
           "id": "09jh4lc6",
           "text": "Handover to Kenan",
-          "done": true
+          "done": false
         }
       ],
       "confirmedAt": null
