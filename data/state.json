@@ -7,9 +7,9 @@
       "deadline": "2026-09-28",
       "assignee": "Yurtyapan, Ilker",
       "category": "New Business",
-      "status": "pruefung",
+      "status": "offen",
       "createdAt": "2026-09-25T07:30:41.310Z",
-      "completedAt": "2026-09-25T11:41:53.678Z",
+      "completedAt": null,
       "subitems": [
         {
           "id": "jyeeyiu2",
@@ -19,7 +19,7 @@
         {
           "id": "94f9lwkc",
           "text": "Cost per Rack",
-          "done": true
+          "done": false
         },
         {
           "id": "yhudi1b0",
