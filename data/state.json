@@ -14,12 +14,12 @@
         {
           "id": "jyeeyiu2",
           "text": "Calculate amount per Rack",
-          "done": false
+          "done": true
         },
         {
           "id": "94f9lwkc",
           "text": "Cost per Rack",
-          "done": true
+          "done": false
         },
         {
           "id": "yhudi1b0",
