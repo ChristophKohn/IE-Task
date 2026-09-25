@@ -1186,12 +1186,12 @@
         {
           "id": "youd6kzn",
           "text": "Delivery 2 weeks",
-          "done": false
+          "done": true
         },
         {
           "id": "pg2ig2qt",
           "text": "First frame producing with Niko",
-          "done": true
+          "done": false
         },
         {
           "id": "226air58",
@@ -1463,9 +1463,9 @@
       "deadline": "2026-08-13",
       "assignee": "Geiger, Karl",
       "category": "IE Task",
-      "status": "offen",
+      "status": "pruefung",
       "createdAt": "2026-08-12T08:33:01.314Z",
-      "completedAt": null,
+      "completedAt": "2026-09-25T11:44:26.427Z",
       "subitems": []
     },
     {
