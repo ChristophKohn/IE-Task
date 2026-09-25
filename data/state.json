@@ -1191,14 +1191,15 @@
         {
           "id": "pg2ig2qt",
           "text": "First frame producing with Niko",
-          "done": false
+          "done": true
         },
         {
           "id": "226air58",
           "text": "Clear timeline to finish all",
           "done": false
         }
-      ]
+      ],
+      "confirmedAt": null
     },
     {
       "id": "478qldoy",
@@ -1462,9 +1463,9 @@
       "deadline": "2026-08-13",
       "assignee": "Geiger, Karl",
       "category": "IE Task",
-      "status": "pruefung",
+      "status": "offen",
       "createdAt": "2026-08-12T08:33:01.314Z",
-      "completedAt": "2026-09-25T11:44:26.427Z",
+      "completedAt": null,
       "subitems": []
     },
     {
