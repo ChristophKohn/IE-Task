@@ -177,14 +177,14 @@
       "deadline": "2026-09-29",
       "assignee": "Yurtyapan, Ilker",
       "category": "IE Task",
-      "status": "pruefung",
+      "status": "offen",
       "createdAt": "2026-09-22T05:36:03.271Z",
-      "completedAt": "2026-09-25T11:43:31.469Z",
+      "completedAt": null,
       "subitems": [
         {
           "id": "kdwcho1h",
           "text": "Handover to Mr. Wagner",
-          "done": true
+          "done": false
         },
         {
           "id": "40db1gvh",
@@ -1131,7 +1131,7 @@
         {
           "id": "9bxnqltz",
           "text": "Transport to M1",
-          "done": false
+          "done": true
         },
         {
           "id": "ai030lv9",
@@ -1143,7 +1143,8 @@
           "text": "Handover to Kenan",
           "done": false
         }
-      ]
+      ],
+      "confirmedAt": null
     },
     {
       "id": "d0tszi7l",
