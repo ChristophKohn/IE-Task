@@ -14,14 +14,15 @@
         {
           "id": "wscfvqsa",
           "text": "Ask for analyse protocoll from China Supplier",
-          "done": false
+          "done": true
         },
         {
           "id": "j99odatp",
           "text": "Create One Page report for Managment",
           "done": false
         }
-      ]
+      ],
+      "confirmedAt": null
     },
     {
       "id": "ojhuvczp",
